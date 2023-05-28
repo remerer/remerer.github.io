@@ -16,8 +16,6 @@
 
 If you like this theme or using it, please give a ⭐️ for motivation ;)
 
-如果想体验手机浏览效果，可以扫一下二维码：
-
 ![](screenshot/1494404591.png)
 
 Using your smartphone to scan the QR Code

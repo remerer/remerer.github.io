@@ -1,8 +1,8 @@
 # Site settings 配置站点
-title: 'Remer's Develop Gitlog'
-description: '昵称悟空，千禧一代，前端开发者/伪极客/灵魂摄影师，热爱技术&设计。很高兴能在这里与你分享我对技术和生活的思考。'
+title: 'Remer Develop Gitlog'
+description: '개발자 Remer의 블로그입니다'
 keyword: 'AWS, JavaScript, Server, Back-end, Python, Django'
-url: '' # your host
+url: 'remerer.github.io' # your host
 
 # when build blog on server, if you don't need baseurl, you should leave this value blank.
 # if you're using GitHub Pages, set baseurl to your blog's .
