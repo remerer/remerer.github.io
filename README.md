@@ -22,21 +22,7 @@ If you like this theme or using it, please give a ⭐️ for motivation ;)
 
 Using your smartphone to scan the QR Code
 
-### Features 特性
-
-#### CN
-
-- 代码高亮
-- 夜间模式
-- Disqus评论系统
-- 粉蓝两种主题色
-- 头图个性化底纹
-- 响应式设计
-- 社交图标
-- SEO标题优化
-- 文章标签索引
-- 博客文章搜索
-- 复制文章内容自动添加版权
+### Features
 
 #### EN
 
@@ -52,7 +38,7 @@ Using your smartphone to scan the QR Code
 - Search
 - Copyright text on copy event
 
-### Usage 快速开始
+### Usage
 
 首先你需要安装Jekyll，请查看文档: [快速指南](http://jekyll.com.cn/docs/quickstart/)
 
@@ -70,30 +56,7 @@ Using your smartphone to scan the QR Code
 
 如果需要部署到线上环境，请参照配置文档的 **开始** 章节进行操作。
 
-### Document 配置文档
-
-#### CN
-
-- 开始
-	- [站点信息](#站点信息)
-	- [写一篇文章](#写一篇文章)
-- 组件
-	- [导航](#导航)
-	- [侧边栏](#侧边栏)
-	- [社交图标](#社交图标)
-	- [个人简介](#个人简介)
-	- [标签](#标签)
-	- [文章搜索](#文章搜索)
-	- [代码高亮](#代码高亮)
-	- [夜间模式](#夜间模式)
-- 个性化
-	- [博客封面、主题皮肤](#主题皮肤)
-	- [头图底纹](#头图底纹)
-- 高级部分
-	- [自定义](#自定义)
-- 集成服务
-	- [Disqus](#disqus)
-	- [Share.js](#sharejs)
+### Document
 
 #### EN
 
