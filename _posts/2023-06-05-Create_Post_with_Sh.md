@@ -2,7 +2,7 @@
 layout: post
 title: Jekyll Post Create ShellScript
 image: 2023-06-05_01.png
-date: 2023-06-05
+date: 2023-06-05 00:00:00 +0900
 tags: [Jekyll, Ruby, Git]
 categories: Devlog
 ---
