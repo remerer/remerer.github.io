@@ -5,11 +5,11 @@ url: "http://remerer.github.io" # the base hostname & protocol for your site, e.
 
 # Author
 author-name:    Hongpyo Jang
-author-image:   1.jpg
-author-job:     Back-end Developer / Game Client Developer
+author-image:   profile.jpg
+author-job:     Back-end / Game Client Developer
 author-email:   remerer@gmail.com # Add your email for contant form.
-author-twitter:  # Add your twitter account
-about-author:   I am a web developer focusing on front-end development. Always hungry to keep learning.
+author-twitter:  # A  dd your twitter account
+about-author:   I am a web developer focusing on Back-end development. Always Likes immersion, keeps learning..
 
 # Social settings
 social-twitter:   
@@ -19,7 +19,7 @@ social-pinterest:
 social-instagram: 
 social-youtube:
 social-vk:   
-social-linkedin: Hongpyo Jang
+social-linkedin: 홍표-장-65274a264
 
 # Newsletter
 mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
