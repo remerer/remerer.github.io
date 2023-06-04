@@ -5,11 +5,11 @@ url: "http://remerer.github.io" # the base hostname & protocol for your site, e.
 
 # Author
 author-name:    Hongpyo Jang
-author-image:   profile.jpg
+author-image:   profile.png
 author-job:     Back-end / Game Client Developer
 author-email:   remerer@gmail.com # Add your email for contant form.
 author-twitter:  # A  dd your twitter account
-about-author:   I am a web developer focusing on Back-end development. Always Likes immersion, keeps learning..
+about-author:   I am a developer focusing on Back-end development. Always Likes immersion, keeps learning..
 
 # Social settings
 social-twitter:   
