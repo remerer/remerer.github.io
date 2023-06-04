@@ -33,6 +33,10 @@ layout: default
           <li class="c-social__item"><a href="https://twitter.com/{{ site.social-twitter }}" target="_blank"><div data-icon='ei-sc-twitter' data-size='s'></div></a></li>
         {% else %}
         {% endif %}
+        {% if site.social-notion %}
+          <li class="c-social__item"><a href="https://{{ site.social-notion }}" target="_blank"><div data-icon='notion' data-size='s'></div></a></li>
+        {% else %}
+        {% endif %}
         {% if site.social-facebook %}
           <li class="c-social__item"><a href="https://facebook.com/{{ site.social-facebook }}" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a></li>
         {% else %}
