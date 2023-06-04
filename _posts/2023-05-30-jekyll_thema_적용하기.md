@@ -2,8 +2,8 @@
 layout: post
 title: Jekyll Thema 적용하기
 image: 
-date: 2023-06-05
-tags: 
+date: 2023-05-30
+tags: [Jekyll, Ruby, Git]
 categories:
 ---
 # Jekyll Thema 적용하기

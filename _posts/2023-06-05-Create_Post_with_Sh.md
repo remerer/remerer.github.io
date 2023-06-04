@@ -3,15 +3,9 @@ layout: post
 title: Jekyll Post Create ShellScript
 image: 2023-06-05_01.png
 date: 2023-06-05
-tags: Jekyll, Ruby, Git
+tags: [Jekyll, Ruby, Git]
 categories: Devlog
 ---
-# H1 For example
-## H2 For example
-### H3 For example
-#### H4 For example
-##### H5 For example
-###### H6 For example   
 # ShellScript로 포스팅 만들기   
 <br>
 
@@ -118,4 +112,4 @@ BackSpace와 Space를 입력받았을 때 제대로 작동하지 않는 문제�
 # 3. **기타문서**
 ---
 ## 3.1 Reference
-해당내용은 [Jay님의 블로그](https://otzslayer.github.io/%EA%B8%B0%ED%83%80/2021/11/15/jekyll-post-generator-script.html)의 코드를 참고하여 수정하였다.
+해당내용은 [Jay님의 블로그](https://otzslayer.github.io/%EA%B8%B0%ED%83%80/2021/11/15/jekyll-post-generator-script.html)의 코드를 베이스코드로 수정하였다.
