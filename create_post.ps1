@@ -12,7 +12,7 @@ $POSTS_DIR = './_posts/'
 $title = Read-Host -Prompt 'Title'
 
 # Trim leading spaces
-# $title = $title.TrimStart()
+$title = $title.TrimStart()
 
 # Date
 $date = Get-Date -Format "yyyy-MM-dd"
@@ -23,26 +23,26 @@ $EXT = '.md'
 # File name should be lowercase
 $filename = $title.ToLower()
 $filename = $filename.Replace(" ", "_")
-$filename = "${date}-${filename}$EXT"
+$filename = "${date}-${filename}${EXT}"
 
 # Go to _posts and create a file
 Set-Location $POSTS_DIR
-New-Item $filename -ItemType File -Encoding utf8
+New-Item $filename -ItemType File
 
 # Add YAML front matter and excerpt space
 # (해당부분은 각자의 Jekyll 테마에 맞추어 변경이 필요하다.)
 $yaml = @"
 ---
 layout: post
-title: $title
-image: $date
-date: $date
+title: ${title}
+image: ${date}
+date: ${date}
 tags: 
 categories:
 ---
 # $title
 
-![문서제목에 맞는 사진]($date)
+![문서제목에 맞는 사진](${date})
 
 <br>
 # 1. 개요
@@ -57,8 +57,8 @@ categories:
 
 "@
 
-Add-Content $filename $yaml -Encoding utf8
+$yaml | Out-File -FilePath $filename -Encoding utf8
 
 Write-Host "File was successfully created!" -ForegroundColor $Green
-Write-Host "❯ $POSTS_DIR$filename" -ForegroundColor $White
-cd ..
+Write-Host "❯ ${POSTS_DIR}${filename}" -ForegroundColor $White
+Set-Location ..
