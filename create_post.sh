@@ -35,7 +35,7 @@ cd ${POSTS_DIR}
 touch ${FILENAME}
 
 # Add YAML front matter and excerpt space
-# (해당부분은 각자의 Jekyll 테마에 맞추어 변경이 필요하다.)
+# (해당부분은 각자의 Jekyll 테마에 맞추어 변경이 필요하다)
 tee -a $FILENAME >/dev/null <<END   
 ---
 layout: post
