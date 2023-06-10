@@ -42,18 +42,18 @@ categories:
 ---
 # $title
 
-![문서제목에 맞는 사진](${date})
+![picture](${date})
 
 <br>
-# 1. 개요
+# 1. Abstract
 ---
-개요본문   
+Summary   
 
 <br>
-# 2. 내용
+# 2. Heading
 ---
-## 2.1 내용하위제목   
-내용본문   
+## 2.1 Sub Heading   
+Main Contents   
 
 "@
 
