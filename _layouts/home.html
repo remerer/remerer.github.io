@@ -22,7 +22,8 @@ layout: default
       {% else %}
       {% endif %}
     </div>
-    <p class="c-author__about">{{site.about-author | strip_html | truncatewords: 50}}</p>
+    <!-- strip_html 제거 -->
+    <p class="c-author__about">{{site.about-author | truncatewords: 50}}</p>
   </div>
 
   <div class="c-sidebar-footer">

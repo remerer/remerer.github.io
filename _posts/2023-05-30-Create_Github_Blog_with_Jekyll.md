@@ -4,16 +4,16 @@ title: Github Pages를 이용한 Jekyll Blog
 image: ./2023-05-30/banner.png
 date: 2023-05-30
 tags: [Jekyll, Ruby, Git]
-categories:
+categories: Devlog
 ---
-# Github Pages를 이용한 Jekyll Blog
+# Github Blog 만들기 (w. Github pages, Jekyll)
 
 <!-- ![문서제목에 맞는 사진](2023-06-05) -->
 
 <br>
 # 1. 개요
 ---
-github pages를 Jekyll 테마를 적용한 나만의 blog로 만들기
+github pages에 Jekyll 테마를 적용하여 Blog 만들기
 
 <br>
 # 2. 과정
