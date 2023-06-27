@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: AI Introduction
-image: 2023-03-29
+image: 2023-03-29/banner.png
 date: 2023-03-29
 tags: [AI, DeepLearning]
 categories: AI
