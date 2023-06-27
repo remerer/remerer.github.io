@@ -32,6 +32,7 @@ Check the theme in action [Demo](https://flexton.netlify.com/)
 
 <ul>
   <li><a href="https://fonts.google.com/">Google Fonts</a> (Volkhov, Open Sans).</li>
+  <li><a href="https://noonnu.cc/">Google Fonts</a> (D2 Coding).</li>
   <li><a href="http://evil-icons.io/">Evil Icons</a></li>
   <li><a href="http://fitvidsjs.com/">FitVids.js</a></li>
   <li><a href="https://jquery.com/">jQuery.com</a></li>
