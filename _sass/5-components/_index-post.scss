@@ -50,10 +50,14 @@
     .c-post-date,
     .c-post-words {
       font-size: 12px;
+      margin-bottom: 5px;
     }
   }
 }
-
+// 요약된 내용 길이에 따라 마진이 달리져 추가
+.c-post-content p {
+  min-height: 56px;
+}
 .c-load-more {
   padding: 20px;
   margin: 20px auto 40px;
