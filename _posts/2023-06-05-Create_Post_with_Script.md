@@ -116,18 +116,22 @@ $POSTS_DIR = './_posts/'
 # Post title
 $title = Read-Host -Prompt 'Title'
 
+# Post date
+$date = Read-Host -Prompt 'Date (null = Today)'
+
 # Trim leading spaces
 $title = $title.TrimStart()
 
 # Date
-$date = Get-Date -Format "yyyy-MM-dd"
+if (-not $date){
+    $date = Get-Date -Format "yyyy-MM-dd"
+}
 
 # Post extension
 $EXT = '.md'
 
 # File name should be lowercase
-$filename = $title.ToLower()
-$filename = $filename.Replace(" ", "_")
+$filename = $title.Replace(" ", "_")
 $filename = "${date}-${filename}${EXT}"
 
 # Go to _posts and create a file

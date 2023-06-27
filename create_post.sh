@@ -18,21 +18,24 @@ read -rp "${bold}Title:${normal} " -a TITLE
 TITLE="$(echo "${TITLE[@]}" | sed -e 's/^[ \t]*//')"
 
 # Date
-DATE=$(date +%Y-%m-%d)
+read -rp "${bold}Date${normal}(NULL==today): " -a DATE
+if [ -z "${DATE[*]}" ]; then
+  DATE=$(date +%Y-%m-%d)
+fi
 
 # Post extension
 EXT='.md'
 
-# File name
-# read -p "${bold}Filename:${normal} " FILENAME
-
 # File name should be lowercase
-FILENAME=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
+FILENAME=$(echo "$TITLE" | tr ' ' '_')
+DIRNAME=${DATE}-${FILENAME}
 FILENAME=${DATE}-${FILENAME}${EXT}
 
+mkdir -p ./images/${DIRNAME}
 # Go to _posts and create a file
 cd ${POSTS_DIR}
 touch ${FILENAME}
+
 
 # Add YAML front matter and excerpt space
 # (해당부분은 각자의 Jekyll 테마에 맞추어 변경이 필요하다)
@@ -40,14 +43,14 @@ tee -a $FILENAME >/dev/null <<END
 ---
 layout: post
 title: ${TITLE}
-image: ${DATE}
+image: ${DIRNAME}/banner.png
 date: ${DATE}
 tags: 
 categories:
 ---
 # ${TITLE}
 
-![문서제목에 맞는 사진](${DATE})
+![문서제목에 맞는 사진](${DIRNAME}/banner.png)
 
 <br>
 # 1. 개요
