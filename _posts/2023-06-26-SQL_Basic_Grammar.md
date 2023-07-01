@@ -78,8 +78,17 @@ abc라는 이름을 가진 테이블에서 불러온다는 의미`FROM abc`
 정렬갯수에 제한을 걸고싶을 때 사용
 `LIMIT 10` 과 같이 사용하면 된다.
 
+
+### 2.2.1 AS 키워드
+
+
 <br>
+
 # 2. 내용
 ---
 ## 2.1 내용하위제목   
 내용본문
+
+# 3. 참고자료   
+1. [PostgreSQL 키워드](https://www.postgresql.kr/docs/10/sql-keywords-appendix.html)   
+2. [MySQL 키워드](https://dev.mysql.com/doc/refman/8.0/en/keywords.html)
