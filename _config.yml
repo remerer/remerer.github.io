@@ -26,7 +26,7 @@ social-linkedin: 홍표-장-65274a264
 mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
 
 # Google Analytics
-google-analytics: # Add your identifier. For example UA-99631805-1
+google-analytics: G-WYGC0JL13Q # Add your identifier. For example UA-99631805-1
 
 # Comment Section (Disqus)
 disqus-identifier: remerer # Add your shortname for Disqus Comment. For example mr-brown

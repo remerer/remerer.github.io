@@ -30,65 +30,86 @@ SQL Query는 DB에서 **어떤 데이터를 선택** 하고,
 
 # 2. SQL기초 문법
 
-SQL문법을 조작하는 내용에 따라 조작어/정의어/제어어로 나눈다고 하는데, 전체 문법수가 그리 많지 않으므로 따로 구분하지는 않으나, 순서대로 서술한다.  
+SQL문법을 조작하는 내용에 따라 조작어/정의어/제어어로 나눈다고 하는데,  
+전체 문법수가 그리 많지 않으므로 따로 구분하지는 않으나, 순서대로 서술한다.  
 문법의 구분기준을 간단히 보자면 다음과 같다.
 
 > **데이터 조작어** : 데이터베이스에서 필요한 데이터를 추출하기 위해 가공하는 문법
+>
 > - SELECT, INSERT, UPDATE, DELETE
 
-> **데이터 정의어** : 데이터베이스 <U>테이블</U>을 구성, 변경할때 사용하는 문법   
+> **데이터 정의어** : 데이터베이스 <U>테이블</U>을 구성, 변경할때 사용하는 문법
+>
 > - CREATE, ALTER, DROP, RENAME
 
 > **데이터 제어어** : 데이터의 검사, 보안, 무결성 등 관리/검사 목적으로 사용하는 문법
+>
 > - GRANT, REVOKE
 
-## 2.1 SELECT
+## 2.1 SELECT & FROM
 
 {%highlight sql%}
-SELECT *
+SELECT _
 FROM abc
 {%endhighlight%}
 필요한 내용들(컬럼 이름)을 선택하고, `SELECT`  
-abc라는 이름을 가진 테이블에서 불러온다는 의미`FROM abc`   
-여기서, `*`는 전체 컬럼을 불러온다는 의미이므로,   
+abc라는 이름을 가진 테이블에서 불러온다는 의미`FROM abc`  
+여기서, `_`는 전체 컬럼을 불러온다는 의미이므로,  
 해당 질의어는 abc테이블 전체를 불러오게 된다.
-### 2.1.1 FROM
 
-### 2.1.2 ORDER BY
+### 2.1.1 ORDER BY
 
 정렬기준을 선택할 수 있다.
 **ASC**(순차정렬)과 **DESC**(역정렬)로 정렬할 수 있으며,  
 정렬조건이 여러개라면 뒤의것부터 정렬한 뒤에 앞에것을 정렬한다.
 
-> -- 코드를 입력하세요  
+{%highlight sql%}
+
 > SELECT ANIMAL_ID, NAME, DATETIME  
 > FROM ANIMAL_INS ORDER BY NAME ASC, DATETIME DESC
+> {%endhighlight%}
 
 해당코드는 데이터를 DATETIME기준으로 정렬후에, 이름으로 정렬한다.  
 (최종적으로는 이름으로 순차정렬. 이름이 같은 경우에만 날짜로 역정렬)
 
-### 2.1.3 WHERE
+### 2.1.2 WHERE
 
 기초수식을 조건으로 둘 수 있다.  
 프로그래밍과 다르게 등치기호를 `=` 하나만 쓴다.
 기초적인 대소비교 및 특정 값과의 비교가 가능하다.
 
-### 2.1.4 LIMIT
+### 2.1.3 LIMIT
 
 정렬갯수에 제한을 걸고싶을 때 사용
-`LIMIT 10` 과 같이 사용하면 된다.
+`LIMIT 10` 과 같이 사용하면 된다
 
+### 2.1.4 AS & DISTINCT
 
-### 2.2.1 AS 키워드
+**AS** : 컬럼명을 변경하고 싶을 때 사용.  
+**DISTINCT** : 중복된 값을 제거하고 싶을 때.
 
+{%highlight sql%}
+SELECT COUNT(DISTINCT NAME) AS nameNum
+FROM TABLE
+{%endhighlight%}
+
+중복된 이름을 제거한 개수를 nameNum열로 제공
+
+| count |
+| :---: |
+|  96   |
 
 <br>
 
 # 2. 내용
+
 ---
-## 2.1 내용하위제목   
+
+## 2.1 내용하위제목
+
 내용본문
 
-# 3. 참고자료   
-1. [PostgreSQL 키워드](https://www.postgresql.kr/docs/10/sql-keywords-appendix.html)   
+# 3. 참고자료
+
+1. [PostgreSQL 키워드](https://www.postgresql.kr/docs/10/sql-keywords-appendix.html)
 2. [MySQL 키워드](https://dev.mysql.com/doc/refman/8.0/en/keywords.html)
