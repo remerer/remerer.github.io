@@ -93,7 +93,7 @@ SELECT COUNT(DISTINCT NAME) AS nameNum
 FROM TABLE
 {%endhighlight%}
 
-중복된 이름을 제거한 개수를 nameNum열로 제공
+중복된 ```NAME```을 제거한 개수를 nameNum 컬럼으로 제공
 
 | count |
 | :---: |
