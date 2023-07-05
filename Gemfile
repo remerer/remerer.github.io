@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 
-gem 'bundler'
-gem 'bundle'
+gem 'bundler', '>= 2.4.14'
 gem 'jekyll'
 gem 'jekyll-paginate'
 gem 'faraday-retry'
