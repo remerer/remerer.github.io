@@ -2,7 +2,10 @@
 layout: home
 ---
 <article class="c-article">
-  <div class="c-article__content" style="padding: 0 20px;">
+    <div class="toc">
+      <a href="#">&lt;맨 위로&gt;</a>
+    </div>
+    <div class="c-article__content" style="padding: 0 20px; margin: 0 30px;">
     <header class="c-header u-hide u-no-margin-top">
       <div class="c-header__box">
         <div class="c-search u-full-width">
@@ -26,6 +29,9 @@ layout: home
           <span>{{page.date | date: '%Y, %b %d'}}</span>  
         </div>
       </header>
+      <!-- 목차 -->
+      {% include toc.html html=content class="c-inline-toc" %}
+      <!-- 내용 -->
       {{page.content | markdownify}}
       <div class="c-article__footer u-clearfix">
         <div class="c-article__tag">

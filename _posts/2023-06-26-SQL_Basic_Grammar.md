@@ -62,12 +62,13 @@ abc라는 이름을 가진 테이블에서 불러온다는 의미`FROM abc`
 정렬기준을 선택할 수 있다.
 **ASC**(순차정렬)과 **DESC**(역정렬)로 정렬할 수 있으며,  
 정렬조건이 여러개라면 뒤의것부터 정렬한 뒤에 앞에것을 정렬한다.
+다중정렬의 구분은 ```,(콤마)```로 한다.
 
 {%highlight sql%}
 
 > SELECT ANIMAL_ID, NAME, DATETIME  
 > FROM ANIMAL_INS ORDER BY NAME ASC, DATETIME DESC
-> {%endhighlight%}
+{%endhighlight%}
 
 해당코드는 데이터를 DATETIME기준으로 정렬후에, 이름으로 정렬한다.  
 (최종적으로는 이름으로 순차정렬. 이름이 같은 경우에만 날짜로 역정렬)
@@ -77,6 +78,7 @@ abc라는 이름을 가진 테이블에서 불러온다는 의미`FROM abc`
 기초수식을 조건으로 둘 수 있다.  
 프로그래밍과 다르게 등치기호를 `=` 하나만 쓴다.
 기초적인 대소비교 및 특정 값과의 비교가 가능하다.
+다중조건은 ```AND```나 ```OR```로 묶어줘야 한다.
 
 ### 2.1.3 LIMIT
 
@@ -101,15 +103,32 @@ FROM TABLE
 
 <br>
 
+### 2.1.4 IFNULL   
+
+해당 값이 NULL일때, 대체하여 입력할 값   
+{%highlight sql%}
+SELECT PT_NAME, PT_NO, GEND_CD, AGE, IFNULL(TLNO, 'NONE') AS TLNO
+FROM PATIENT WHERE AGE <= 12 AND GEND_CD = "W" ORDER BY AGE DESC, PT_NAME ASC 
+{%endhighlight%}
+
+TLNO가 NULL일때, "NONE" 출력
+
+### 2.1.5 DATE_FORMAT
+
+DATE_FORMAT(입력값, 출력형식 or 출력 TEXT)
+출력형식은 "%Y-%M-%D", "%y/%m/%d", "%y년 %m월 %d일" 등으로 표기할 수 있다.   
+해당 출력형식은 대소문자를 구분한다.   
+
 # 2. 내용
 
 ---
 
 ## 2.1 내용하위제목
 
-내용본문
+내용본문    
 
 # 3. 참고자료
 
 1. [PostgreSQL 키워드](https://www.postgresql.kr/docs/10/sql-keywords-appendix.html)
 2. [MySQL 키워드](https://dev.mysql.com/doc/refman/8.0/en/keywords.html)
+3. [Oracle 키워드](https://docs.oracle.com/cd/A97630_01/appdev.920/a42525/apb.htm)

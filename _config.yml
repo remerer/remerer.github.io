@@ -33,6 +33,9 @@ disqus-identifier: remerer # Add your shortname for Disqus Comment. For example 
 
 # Build settings (Wiki식으로 빠른링크를 위해 변경)
 markdown: kramdown
+kramdown:
+  parse_block_html: true
+  
 permalink: /:title/
 plugins:
   - jekyll-paginate
