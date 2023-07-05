@@ -49,13 +49,14 @@ SQL문법을 조작하는 내용에 따라 조작어/정의어/제어어로 나�
 ## 2.1 SELECT & FROM
 
 {%highlight sql%}
-SELECT _
-FROM abc
+SELECT *
+FROM ALPHABET abc 
 {%endhighlight%}
 필요한 내용들(컬럼 이름)을 선택하고, `SELECT`  
-abc라는 이름을 가진 테이블에서 불러온다는 의미`FROM abc`  
-여기서, `_`는 전체 컬럼을 불러온다는 의미이므로,  
-해당 질의어는 abc테이블 전체를 불러오게 된다.
+ALPHABET이라는 이름을 가진 테이블에서 불러온다는 의미`FROM ALPHABET`  
+여기서, `*`는 전체 컬럼을 불러온다는 의미이므로,  
+해당 질의어는 ALPHABET테이블 전체를 불러오게 된다.
+abc는 ALPHABET테이블의 별칭으로 같은 의미를 가진다. 아래의 `AS`구문과 동일
 
 ### 2.1.1 ORDER BY
 
@@ -113,19 +114,59 @@ FROM PATIENT WHERE AGE <= 12 AND GEND_CD = "W" ORDER BY AGE DESC, PT_NAME ASC
 
 TLNO가 NULL일때, "NONE" 출력
 
+*추가로, NULL값을 판단할때는 `=`가 아닌 IS를 사용해야 한다.
+
 ### 2.1.5 DATE_FORMAT
 
 DATE_FORMAT(입력값, 출력형식 or 출력 TEXT)
 출력형식은 "%Y-%M-%D", "%y/%m/%d", "%y년 %m월 %d일" 등으로 표기할 수 있다.   
 해당 출력형식은 대소문자를 구분한다.   
 
-# 2. 내용
+### 2.2 JOIN
+결합구문은 여러 테이블의 레코드를 조합하여, 하나로 표현할 수 있게 해준다.   
+기본적으로 아래 네가지 결합을 규정한다.   
+> INNER JOIN
+> OUTER JOIN
+> LEFT JOIN
+> RIGHT JOIN
 
----
+#### 2.2.1 CROSS JOIN   
 
-## 2.1 내용하위제목
+교차조인은 곱집합을 반환한다.   
+A 테이블의 각 행과 B 테이블의 각 행을 곱연산한 결과값을 반환한다.   
+따라서, 결과 테이블의 행은 (A행 수*B행 수)가 된다.   
 
-내용본문    
+#### 2.2.2 INNER JOIN   
+
+내부조인은 가장 흔한 결합방식으로, A와 B테이블에 일치하는 결과를 가진 것만 반환한다.   
+{% highlight sql %}
+SELECT *
+FROM A INNER JOIN B
+ON A.ID = B.ID;
+{% endhighlight %}
+A테이블의 ID와 B테이블의 ID가 일치하는 내용만 반환   
+(일치하지 않으면 제외된다)   
+> 테이블 1 INNER JOIN 테이블 2
+> ON 일치조건(AND로 결합)
+<br>
+   
+#### 2.2.3 OUTER JOIN
+
+**LEFT JOIN & RIGHT JOIN**
+
+왼쪽/오른쪽 조인은 외부조인의 종류로서, 해당하는 방향의 테이블을 최소 1번씩은 출력한다.   
+
+**FULL OUTER JOIN**
+
+완전 외부 조인은, 양측 테이블의 내용을 모두 최소 한번씩은 출력하게 하는 외부조인이다.   
+모든 결과값을 반환하는 방식.(CROSS JOIN과는 다르다)   
+일치하는 결과값이 없더라도, 해당 데이터는 NULL로 반환된다.   
+결과 테이블의 행은, (A행 수 + B행 수 - 겹치는갯수)가 된다.
+
+#### 2.2.4 GROUP BY
+
+##### HAVING 조건문
+HAVING은 SUM, COUNT등과 결합하여 GROUP된 집합에서 필터링 조건을 추가한다.
 
 # 3. 참고자료
 

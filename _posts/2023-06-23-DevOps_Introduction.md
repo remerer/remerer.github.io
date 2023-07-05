@@ -1,12 +1,12 @@
 ﻿---
 layout: post
-title: DevOps
+title: DevOps 개론
 image: 
 date: 2023-06-23
 tags: 
-categories:
+categories: DevOps
 ---
-# DevOps
+# DevOps 개론
    
 <br>   
 
