@@ -70,7 +70,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  jekyll
+  jekyll (>= 4.3.0)
   jekyll-paginate
   tzinfo-data
 
