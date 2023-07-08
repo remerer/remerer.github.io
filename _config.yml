@@ -22,6 +22,15 @@ social-youtube:
 social-vk:   
 social-linkedin: 홍표-장-65274a264
 
+categories:
+  - DB
+  - Back-end
+  - AI
+  - Devlog
+  - Blog
+  - OS
+  - Web
+
 # Newsletter
 mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
 
