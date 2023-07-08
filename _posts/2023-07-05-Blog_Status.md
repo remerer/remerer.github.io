@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Blog 진행상황
-image: 2023-07-05-Blog_진행상황/banner.png
+image: 2023-07-05-Blog_Status/banner.png
 date: 2023-07-05
 tags: [Jekyll, Ruby, HTML]
 categories: Blog
