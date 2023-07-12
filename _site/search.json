@@ -1,0 +1,91 @@
+[
+  
+    {
+      "title"    : "Github Pages Deploy",
+      "category" : "",
+      "tags"     : "Git",
+      "url"      : "/Github_Pages_Deploy/",
+      "date"     : "2023-07-12 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Blog 진행상황",
+      "category" : "",
+      "tags"     : "Jekyll, Ruby, and HTML",
+      "url"      : "/Blog_Status/",
+      "date"     : "2023-07-05 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "JAVA Advanced",
+      "category" : "",
+      "tags"     : "JAVA",
+      "url"      : "/JAVA_Advanced/",
+      "date"     : "2023-06-27 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "SQL Basic Grammar",
+      "category" : "",
+      "tags"     : "SQL Query",
+      "url"      : "/SQL_Basic_Grammar/",
+      "date"     : "2023-06-26 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Back-end Dev Learning",
+      "category" : "",
+      "tags"     : "Java, Spring, and SQL",
+      "url"      : "/Back-end_Dev_Learning/",
+      "date"     : "2023-06-26 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "DevOps 개론",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/DevOps_Introduction/",
+      "date"     : "2023-06-23 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "DB Wordlist",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/DB_Wordlist/",
+      "date"     : "2023-06-23 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Jekyll Post Create Script",
+      "category" : "",
+      "tags"     : "Jekyll, Ruby, and Git",
+      "url"      : "/Create_Post_with_Script/",
+      "date"     : "2023-06-05 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Github Pages를 이용한 Jekyll Blog",
+      "category" : "",
+      "tags"     : "Jekyll, Ruby, and Git",
+      "url"      : "/Create_Github_Blog_with_Jekyll/",
+      "date"     : "2023-05-30 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "AI Introduction",
+      "category" : "",
+      "tags"     : "AI and DeepLearning",
+      "url"      : "/AI_Introduction/",
+      "date"     : "2023-03-29 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Krafton Jungle Summary",
+      "category" : "",
+      "tags"     : "Python, C++, C#, Algorithm, and CS",
+      "url"      : "/Krafton_Jungle_Summary/",
+      "date"     : "2023-03-16 00:00:00 +0900"
+    } 
+  
+]
