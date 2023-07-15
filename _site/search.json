@@ -1,14 +1,6 @@
 [
   
     {
-      "title"    : "Github Pages Deploy",
-      "category" : "",
-      "tags"     : "Git",
-      "url"      : "/Github_Pages_Deploy/",
-      "date"     : "2023-07-12 00:00:00 +0900"
-    } ,
-  
-    {
       "title"    : "Blog 진행상황",
       "category" : "",
       "tags"     : "Jekyll, Ruby, and HTML",
