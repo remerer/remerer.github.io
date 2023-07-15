@@ -15,6 +15,7 @@ jobs:
         with:
           ref: main
           token: ${{ secrets.MY_PAT }}  # Use the PAT to authenticate
+          fetch-depth: 0  # Fetch all branches and tags
 
       # Add any build steps here if necessary
 
