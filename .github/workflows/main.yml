@@ -20,8 +20,8 @@ jobs:
 
       - name: Push _site to site branch
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "remerer"
+          git config user.email "remerer@gmail.com"
           git checkout -b site
           cp -R _site/* .
           git add .
