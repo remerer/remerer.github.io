@@ -1,0 +1,28 @@
+name: Push _site to site branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      # Add any build steps here if necessary
+
+      - name: Push _site to site branch
+        run: |
+          git config user.name "remerer-GA"
+          git config user.email "remerer@gmail.com"
+          git checkout -b site
+          cp -R _site/* .
+          git add .
+          git commit -m "Update site branch"
+          git push origin site
