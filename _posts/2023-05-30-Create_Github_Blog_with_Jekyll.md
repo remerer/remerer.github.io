@@ -59,8 +59,9 @@ VSCode 및 터미널을 한번 재시작한 후, 터미널에 gem을 입력하�
 ## 2.4 사용된 Package설치 및 서버실행확인
 로컬로 서버를 구동하는 코드
 {% highlight bash %}
-~ $ jekyll serve
-{% endhighlight %}
+~ $ bundle exec jekyll serve
+{% endhighlight %}   
+(jekyll serve로도 실행되지만, github pages와 같은상황에서 실행할 수 있도록 하기위해)   
 다만, 대부분의 테마의 경우 설치된 버전이 다르거나 하는 문제가 있을 수 있다.   
 이경우 루트폴더의 Gemfile.lock을 삭제한 뒤 최신버전에 맞게 설치하는것으로 대부분의 문제를 해결할 수 있다.
 {% highlight bash %}
