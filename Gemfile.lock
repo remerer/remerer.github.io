@@ -9,9 +9,15 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
+    faraday (2.7.10)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
+    faraday-retry (2.2.0)
+      faraday (~> 2.0)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
-    google-protobuf (3.23.3-x64-mingw-ucrt)
+    google-protobuf (3.23.4-x64-mingw-ucrt)
     http_parser.rb (0.8.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -47,12 +53,13 @@ GEM
     mercenary (0.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (5.0.1)
+    public_suffix (5.0.3)
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.2.5)
     rouge (4.1.2)
+    ruby2_keywords (0.0.5)
     safe_yaml (1.0.5)
     sass-embedded (1.63.6-x64-mingw-ucrt)
       google-protobuf (~> 3.23)
@@ -63,6 +70,7 @@ GEM
     tzinfo-data (1.2023.3)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
+    wdm (0.1.1)
     webrick (1.8.1)
 
 PLATFORMS
@@ -70,9 +78,11 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  faraday-retry
   jekyll
   jekyll-paginate
   tzinfo-data
+  wdm (>= 0.1.0)
 
 BUNDLED WITH
    2.4.15
