@@ -5,8 +5,6 @@ image: 2023-06-05_01.png
 date: 2023-06-05 00:00:00 +0900
 tags: [Jekyll, Ruby, Git]
 categories: Devlog
-comments: true
-
 ---
 # Script로 Jekyll 포스팅 폼 만들기   
 <br>

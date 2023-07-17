@@ -5,8 +5,6 @@ image: 2023-06-26-Back-end_Dev_Learning/banner.png
 date: 2023-06-26
 tags: [Java, Spring, SQL]
 categories: Blog
-comments: true
-
 ---
 # Back-end Dev Learning
 

@@ -5,8 +5,6 @@ image: 2023-07-05-Blog_Status/banner.png
 date: 2023-07-05
 tags: [Jekyll, Ruby, HTML]
 categories: Blog
-comments: true
-
 ---
 # Blog 진행상황
 
@@ -35,3 +33,18 @@ localhost에서는 포스트 별로 정해진 카테고리가 잘 작동한다.
 TOC(Table of Contents)를 집어넣었는데, 현재 깔끔하지가 않다.   
 상단에 표시되어도 되고, 우측 고정방식으로 표시해도 되는데 현재는 상단에 깨져서 나오는 중.   
 가장 우선적으로 개선할 예정.
+
+# 3. 개선상황
+---   
+## 3.1 카테고리 작동개선 (7/15)
+Github Pages에서 종속되어있는 패키지 목록((링크)[https://pages.github.com/versions/])기준으로 작동.
+외부 플러그인 (_plugins 폴더)의 내용은 적용안됨   
+
+해당 문제를 해결하려면 다음과 같은 방법이 있다.   
+1. 외부 플러그인을 사용하지않고, Github Pages에서 제공하는 라이브러리만 사용하는 테마 사용   
+2. 해당 플러그인을 비활성화 하고, 플러그인을 대체할 스크립트 작성   
+3. 로컬 빌드 후, 해당 _site내의 항목을 배포      
+
+그중 3번을 적용하고, _site를 submodule로 두어 배포를 자동화하고자 한다.
+포스트를 수정하고나서, jekyll serve로 빌드해주고,
+해당 레포지토리를 pages에서 설정해주면 된다.
