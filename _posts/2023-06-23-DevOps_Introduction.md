@@ -5,6 +5,8 @@ image:
 date: 2023-06-23
 tags: 
 categories: DevOps
+comments: true
+
 ---
 # DevOps 개론
    

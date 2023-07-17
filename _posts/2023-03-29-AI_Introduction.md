@@ -5,6 +5,8 @@ image: 2023-03-29/banner.png
 date: 2023-03-29
 tags: [AI, DeepLearning]
 categories: AI
+comments: true
+
 ---
 
 # 인공신경망(AI) 학습

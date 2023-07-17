@@ -5,6 +5,7 @@ image: ./2023-03-16/banner.png
 date: 2023-03-16
 tags: [Python, C++, C#, Algorithm, CS]
 categories: Blog
+comments: true
 ---
 # Krafton Jungle 요약
 

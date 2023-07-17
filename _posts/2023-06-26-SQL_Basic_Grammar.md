@@ -5,6 +5,8 @@ image: 2023-06-26-SQL_Basic_Grammar/banner.png
 date: 2023-06-26
 tags: [SQL Query]
 categories: DB
+comments: true
+
 ---
 
 # SQL 기초 문법

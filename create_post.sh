@@ -47,6 +47,7 @@ image: ${DIRNAME}/banner.png
 date: ${DATE}
 tags: 
 categories:
+comments: true    #Disqus코멘트 허용여부
 ---
 # ${TITLE}
 

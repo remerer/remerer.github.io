@@ -5,6 +5,8 @@ image: 2023-06-27-JAVA_Advanced/banner.png
 date: 2023-06-27
 tags: JAVA
 categories: Back-end
+comments: true
+
 ---
 # JAVA Advanced
 

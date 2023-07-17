@@ -5,6 +5,8 @@ image:
 date: 2023-06-23
 tags: 
 categories:
+comments: true
+
 ---
 # DB Wordlist
 

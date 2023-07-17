@@ -5,6 +5,8 @@ image: 2023-07-05-Blog_Status/banner.png
 date: 2023-07-05
 tags: [Jekyll, Ruby, HTML]
 categories: Blog
+comments: true
+
 ---
 # Blog 진행상황
 
