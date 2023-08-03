@@ -6,7 +6,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
   <title>SQL Data Manipulation Language</title>
-  <meta name='description' content="SQL Data Manipulation Language">
+  <meta name='description' content="SQL 조작어 (Data Manipulation Language)">
   <link rel='canonical' href="http://localhost:4000/SQL_2_DML/">
   <link rel='alternate' type='application/rss+xml' title='Remer's Devlog' href="http://localhost:4000/feed.xml">
   <!-- Fonts -->
@@ -93,10 +93,7 @@
 
 <main class="c-content">
   <article class="c-article">
-    <div class="toc">
-      <a href="#">&lt;맨 위로&gt;</a>
-    </div>
-    <div class="c-article__content" style="padding: 0 20px; margin: 0 30px;">
+  <div class="c-article__content" style="padding: 0 20px; margin: 0 30px;">
     <header class="c-header u-hide u-no-margin-top">
       <div class="c-header__box">
         <div class="c-search u-full-width">
@@ -110,7 +107,7 @@
       </div>
     </header>
     
-    <div class="c-article__image o-opacity" style="background-image: url( /images/2023-07-27-SQL_2_DML/banner.png )"></div>
+    <div class="c-article__image o-opacity" style="background-image: url( /images/2023-07-17-SQL_2_DML/banner.png )"></div>
     
     <div class="c-wrap-content" style="max-width: 1000px; margin: 0 auto;">
       <header class="c-article__header">
@@ -120,26 +117,28 @@
         </div>
       </header>
       <!-- 목차 -->
-      <ul class="c-inline-toc"><li><a href="#sql-data-manipulation-language">SQL Data Manipulation Language</a></li><li><a href="#1-sql-조작어">1. SQL 조작어</a><ul><li><a href="#21-select">2.1 SELECT</a><ul><li><a href="#211-order-by">2.1.1 ORDER BY</a></li><li><a href="#212-where">2.1.2 WHERE</a></li><li><a href="#213-limit">2.1.3 LIMIT</a></li><li><a href="#214-as--distinct">2.1.4 AS &amp; DISTINCT</a></li><li><a href="#214-ifnull">2.1.4 IFNULL</a></li><li><a href="#215-date_format">2.1.5 DATE_FORMAT</a></li><li><a href="#22-join">2.2 JOIN</a><ul><li><a href="#221-cross-join">2.2.1 CROSS JOIN</a></li><li><a href="#222-inner-join">2.2.2 INNER JOIN</a></li><li><a href="#223-outer-join">2.2.3 OUTER JOIN</a></li><li><a href="#224-group-by">2.2.4 GROUP BY</a><ul><li><a href="#having-조건문">HAVING 조건문</a></li></ul></li></ul></li></ul></li></ul></li><li><a href="#3-내용-정리">3. 내용 정리</a></li></ul>
+      <ul class="c-inline-toc"><li><a href="#sql-조작어-data-manipulation-language">SQL 조작어 (Data Manipulation Language)</a></li><li><a href="#1-sql-조작어">1. SQL 조작어</a><ul><li><a href="#21-select">2.1 SELECT</a><ul><li><a href="#211-order-by">2.1.1 ORDER BY</a></li><li><a href="#212-where">2.1.2 WHERE</a></li><li><a href="#213-limit">2.1.3 LIMIT</a></li><li><a href="#214-as--distinct">2.1.4 AS &amp; DISTINCT</a></li><li><a href="#214-ifnull">2.1.4 IFNULL</a></li><li><a href="#215-date_format">2.1.5 DATE_FORMAT</a></li><li><a href="#22-join">2.2 JOIN</a><ul><li><a href="#221-cross-join">2.2.1 CROSS JOIN</a></li><li><a href="#222-inner-join">2.2.2 INNER JOIN</a></li><li><a href="#223-outer-join">2.2.3 OUTER JOIN</a></li><li><a href="#224-group-by">2.2.4 GROUP BY</a><ul><li><a href="#having-조건문">HAVING 조건문</a></li></ul></li></ul></li></ul></li></ul></li><li><a href="#3-내용-정리">3. 내용 정리</a></li></ul>
 
       <!-- 내용 -->
-      <h1 id="sql-data-manipulation-language">SQL Data Manipulation Language</h1>
+      <h1 id="sql-조작어-data-manipulation-language">SQL 조작어 (Data Manipulation Language)</h1>
 
 <p><br /></p>
 
 <h1 id="1-sql-조작어">1. SQL 조작어</h1>
+
 <hr />
 
-<p>조작어는 크게 4가지 SELECT(선택), INSERT(삽입), UPDATE(수정), DELETE(삭제)로 나뉜다. <br />
-이 외에 자주사용되는 키워드들과 엮어 세부 카테고리로 나누었다. <br />
-세부 키워드는 `    ` 와 같이 하이라이트 처리</p>
+<p>조작어는 크게 4가지 SELECT(선택), INSERT(삽입), UPDATE(수정), DELETE(삭제)로 나뉜다.<br />
+이 외에 자주사용되는 키워드들과 엮어 세부 카테고리로 나누었다.<br />
+세부 키워드는 <code class="language-plaintext highlighter-rouge">　　　</code> 와 같이 하이라이트 처리</p>
 
 <h2 id="21-select">2.1 SELECT</h2>
+
 <p>데이터의 선택</p>
 
 <figure class="highlight">
-  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span>
-<span class="k">FROM</span> <span class="n">ALPHABET</span> <span class="n">abc</span> </code></pre>
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="err">\</span><span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ALPHABET</span> <span class="n">abc</span></code></pre>
 </figure>
 
 <p>필요한 내용들(컬럼 이름)을 선택하고, <code class="language-plaintext highlighter-rouge">SELECT</code><br />
@@ -157,7 +156,8 @@ abc는 ALPHABET테이블의 별칭으로 같은 의미를 가진다. 아래의 <
 
 <figure class="highlight">
   <pre><code class="language-sql" data-lang="sql"><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">ANIMAL_ID</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="nb">DATETIME</span>  
-<span class="o">&gt;</span> <span class="k">FROM</span> <span class="n">ANIMAL_INS</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">NAME</span> <span class="k">ASC</span><span class="p">,</span> <span class="nb">DATETIME</span> <span class="k">DESC</span></code></pre>
+<span class="o">&gt;</span> <span class="k">FROM</span> <span class="n">ANIMAL_INS</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">NAME</span> <span class="k">ASC</span><span class="p">,</span> <span class="nb">DATETIME</span> <span class="k">DESC</span>
+ </code></pre>
 </figure>
 
 <p>해당코드는 데이터를 DATETIME기준으로 정렬후에, 이름으로 정렬한다.<br />
@@ -208,7 +208,7 @@ abc는 ALPHABET테이블의 별칭으로 같은 의미를 가진다. 아래의 <
 
 <figure class="highlight">
   <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">PT_NAME</span><span class="p">,</span> <span class="n">PT_NO</span><span class="p">,</span> <span class="n">GEND_CD</span><span class="p">,</span> <span class="n">AGE</span><span class="p">,</span> <span class="n">IFNULL</span><span class="p">(</span><span class="n">TLNO</span><span class="p">,</span> <span class="s1">'NONE'</span><span class="p">)</span> <span class="k">AS</span> <span class="n">TLNO</span>
-<span class="k">FROM</span> <span class="n">PATIENT</span> <span class="k">WHERE</span> <span class="n">AGE</span> <span class="o">&lt;=</span> <span class="mi">12</span> <span class="k">AND</span> <span class="n">GEND_CD</span> <span class="o">=</span> <span class="nv">"W"</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">AGE</span> <span class="k">DESC</span><span class="p">,</span> <span class="n">PT_NAME</span> <span class="k">ASC</span> </code></pre>
+<span class="k">FROM</span> <span class="n">PATIENT</span> <span class="k">WHERE</span> <span class="n">AGE</span> <span class="o">&lt;=</span> <span class="mi">12</span> <span class="k">AND</span> <span class="n">GEND_CD</span> <span class="o">=</span> <span class="nv">"W"</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">AGE</span> <span class="k">DESC</span><span class="p">,</span> <span class="n">PT_NAME</span> <span class="k">ASC</span></code></pre>
 </figure>
 
 <p>TLNO가 NULL일때, “NONE” 출력</p>
@@ -218,12 +218,14 @@ abc는 ALPHABET테이블의 별칭으로 같은 의미를 가진다. 아래의 <
 <h3 id="215-date_format">2.1.5 DATE_FORMAT</h3>
 
 <p>DATE_FORMAT(입력값, 출력형식 or 출력 TEXT)
-출력형식은 “%Y-%M-%D”, “%y/%m/%d”, “%y년 %m월 %d일” 등으로 표기할 수 있다. <br />
+출력형식은 “%Y-%M-%D”, “%y/%m/%d”, “%y년 %m월 %d일” 등으로 표기할 수 있다.<br />
 해당 출력형식은 대소문자를 구분한다.</p>
 
 <h3 id="22-join">2.2 JOIN</h3>
-<p>결합구문은 여러 테이블의 레코드를 조합하여, 하나로 표현할 수 있게 해준다. <br />
+
+<p>결합구문은 여러 테이블의 레코드를 조합하여, 하나로 표현할 수 있게 해준다.<br />
 기본적으로 아래 네가지 결합을 규정한다.</p>
+
 <blockquote>
   <p>INNER JOIN
 OUTER JOIN
@@ -233,8 +235,8 @@ RIGHT JOIN</p>
 
 <h4 id="221-cross-join">2.2.1 CROSS JOIN</h4>
 
-<p>교차조인은 곱집합을 반환한다. <br />
-A 테이블의 각 행과 B 테이블의 각 행을 곱연산한 결과값을 반환한다. <br />
+<p>교차조인은 곱집합을 반환한다.<br />
+A 테이블의 각 행과 B 테이블의 각 행을 곱연산한 결과값을 반환한다.<br />
 따라서, 결과 테이블의 행은 (A행 수*B행 수)가 된다.</p>
 
 <h4 id="222-inner-join">2.2.2 INNER JOIN</h4>
@@ -242,13 +244,14 @@ A 테이블의 각 행과 B 테이블의 각 행을 곱연산한 결과값을 �
 <p>내부조인은 가장 흔한 결합방식으로, A와 B테이블에 일치하는 결과를 가진 것만 반환한다.</p>
 
 <figure class="highlight">
-  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span>
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="err">\</span><span class="o">*</span>
 <span class="k">FROM</span> <span class="n">A</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">B</span>
 <span class="k">ON</span> <span class="n">A</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">ID</span><span class="p">;</span></code></pre>
 </figure>
 
-<p>A테이블의 ID와 B테이블의 ID가 일치하는 내용만 반환 <br />
+<p>A테이블의 ID와 B테이블의 ID가 일치하는 내용만 반환<br />
 (일치하지 않으면 제외된다)</p>
+
 <blockquote>
   <p>테이블 1 INNER JOIN 테이블 2
 ON 일치조건(AND로 결합)
@@ -263,14 +266,15 @@ ON 일치조건(AND로 결합)
 
 <p><strong>FULL OUTER JOIN</strong></p>
 
-<p>완전 외부 조인은, 양측 테이블의 내용을 모두 최소 한번씩은 출력하게 하는 외부조인이다. <br />
-모든 결과값을 반환하는 방식.(CROSS JOIN과는 다르다) <br />
-일치하는 결과값이 없더라도, 해당 데이터는 NULL로 반환된다. <br />
+<p>완전 외부 조인은, 양측 테이블의 내용을 모두 최소 한번씩은 출력하게 하는 외부조인이다.<br />
+모든 결과값을 반환하는 방식.(CROSS JOIN과는 다르다)<br />
+일치하는 결과값이 없더라도, 해당 데이터는 NULL로 반환된다.<br />
 결과 테이블의 행은, (A행 수 + B행 수 - 겹치는갯수)가 된다.</p>
 
 <h4 id="224-group-by">2.2.4 GROUP BY</h4>
 
 <h5 id="having-조건문">HAVING 조건문</h5>
+
 <p>HAVING은 SUM, COUNT등과 결합하여 GROUP된 집합에서 필터링 조건을 추가한다.</p>
 
 <h1 id="3-내용-정리">3. 내용 정리</h1>
@@ -281,6 +285,9 @@ ON 일치조건(AND로 결합)
   <li><a href="https://docs.oracle.com/cd/A97630_01/appdev.920/a42525/apb.htm">Oracle 키워드</a></li>
 </ol>
 
+      <div class="toc">
+        <a href="#">&lt;맨 위로&gt;</a>
+      </div>
       <div class="c-article__footer u-clearfix">
         <div class="c-article__tag">
           
