@@ -113,11 +113,12 @@
       <header class="c-article__header">
         <h1 class="c-article__title">SQL Data Manipulation Language</h1>
         <div class="c-article__date">
-          <span>2023, Jun 26</span>  
+          <span>Date Created : 2023, Jun 26<br>
+                Date Modified : 2023, Aug 03</span>  
         </div>
       </header>
       <!-- 목차 -->
-      <ul class="c-inline-toc"><li><a href="#sql-조작어-data-manipulation-language">SQL 조작어 (Data Manipulation Language)</a></li><li><a href="#1-sql-조작어">1. SQL 조작어</a><ul><li><a href="#21-select">2.1 SELECT</a><ul><li><a href="#211-order-by">2.1.1 ORDER BY</a></li><li><a href="#212-where">2.1.2 WHERE</a></li><li><a href="#213-limit">2.1.3 LIMIT</a></li><li><a href="#214-as--distinct">2.1.4 AS &amp; DISTINCT</a></li><li><a href="#214-ifnull">2.1.4 IFNULL</a></li><li><a href="#215-date_format">2.1.5 DATE_FORMAT</a></li><li><a href="#22-join">2.2 JOIN</a><ul><li><a href="#221-cross-join">2.2.1 CROSS JOIN</a></li><li><a href="#222-inner-join">2.2.2 INNER JOIN</a></li><li><a href="#223-outer-join">2.2.3 OUTER JOIN</a></li><li><a href="#224-group-by">2.2.4 GROUP BY</a><ul><li><a href="#having-조건문">HAVING 조건문</a></li></ul></li></ul></li></ul></li></ul></li><li><a href="#3-내용-정리">3. 내용 정리</a></li></ul>
+      <ul class="c-inline-toc"><li><a href="#sql-조작어-data-manipulation-language">SQL 조작어 (Data Manipulation Language)</a></li><li><a href="#1-sql-조작어">1. SQL 조작어</a><ul><li><a href="#21-select">2.1 SELECT</a><ul><li><a href="#211-where-조건문">2.1.1 WHERE (조건문)</a></li><li><a href="#212-order-by-정렬">2.1.2 ORDER BY (정렬)</a></li><li><a href="#213-limit-출력제한">2.1.3 LIMIT (출력제한)</a></li><li><a href="#214-as--distinct">2.1.4 AS &amp; DISTINCT</a></li><li><a href="#214-ifnull">2.1.4 IFNULL</a></li><li><a href="#215-date_format">2.1.5 DATE_FORMAT</a></li><li><a href="#22-join">2.2 JOIN</a><ul><li><a href="#221-cross-join">2.2.1 CROSS JOIN</a></li><li><a href="#222-inner-join">2.2.2 INNER JOIN</a></li><li><a href="#223-outer-join">2.2.3 OUTER JOIN</a></li><li><a href="#224-group-by">2.2.4 GROUP BY</a><ul><li><a href="#having-조건문">HAVING 조건문</a></li></ul></li></ul></li></ul></li></ul></li><li><a href="#3-내용-정리">3. 내용 정리</a></li></ul>
 
       <!-- 내용 -->
       <h1 id="sql-조작어-data-manipulation-language">SQL 조작어 (Data Manipulation Language)</h1>
@@ -147,7 +148,43 @@ ALPHABET이라는 이름을 가진 테이블에서 불러온다는 의미<code c
 해당 질의어는 ALPHABET테이블 전체를 불러오게 된다.
 abc는 ALPHABET테이블의 별칭으로 같은 의미를 가진다. 아래의 <code class="language-plaintext highlighter-rouge">AS</code>구문과 동일</p>
 
-<h3 id="211-order-by">2.1.1 ORDER BY</h3>
+<h3 id="211-where-조건문">2.1.1 WHERE (조건문)</h3>
+
+<p>기초수식을 조건으로 둘 수 있다.<br />
+프로그래밍과 다르게 등치기호를 <code class="language-plaintext highlighter-rouge">=</code> 하나만 쓴다.
+기초적인 대소비교 및 특정 값과의 비교가 가능하다.
+다중조건은 <code class="language-plaintext highlighter-rouge">AND</code>나 <code class="language-plaintext highlighter-rouge">OR</code>로 묶어줘야 한다.</p>
+
+<p><strong>LIKE</strong> <br />
+<code class="language-plaintext highlighter-rouge">LIKE</code>는 해당 내용과 유사한지 판별하는 구문 <br />
+<code class="language-plaintext highlighter-rouge">"%keyword%"</code>의 형식으로 입력한다면, 해당 내용을 포함하는지 확인할 수 있다.
+해당 구문은 단 1개의 조건(컬럼 OR 문자열)과만 비교 가능하며,
+OR 로 연결한다고 해서 여러가지 문자열을 검색하지 않는다. <br />
+이는, 해당 비교조건이 컬럼일 때 OR로 묶이는 범위의 모호성을 배제하고 <br />
+여러가지 Colume의 비교를 하나의 WHERE문을 묶어줄 수 있게한다.</p>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="err">\</span><span class="o">*</span>
+<span class="k">FROM</span> <span class="n">REGISTER</span> <span class="n">reg</span>
+<span class="k">WHERE</span> <span class="n">NAME</span> <span class="k">LIKE</span> <span class="nv">"%Tom%"</span></code></pre>
+</figure>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="err">\</span><span class="o">*</span>
+<span class="k">FROM</span> <span class="n">REGISTER</span> <span class="n">reg</span>
+<span class="k">WHERE</span> <span class="n">ADDRESS</span> <span class="k">LIKE</span> <span class="n">CITY</span>
+<span class="o">#</span> <span class="k">WHERE</span> <span class="n">ADDRESS</span> <span class="k">LIKE</span> <span class="n">CITY</span> <span class="k">OR</span> <span class="n">CONTRY</span>
+<span class="o">#</span> <span class="err">해당</span> <span class="err">비교문은</span> <span class="err">잘못됨</span> 
+<span class="o">#</span> <span class="k">WHERE</span> <span class="p">[</span><span class="n">ADDRESS</span> <span class="k">LIKE</span> <span class="n">CITY</span><span class="p">]</span> <span class="k">OR</span> <span class="p">[</span><span class="n">CONTRY</span><span class="p">]</span> <span class="err">로</span> <span class="err">동작함</span></code></pre>
+</figure>
+
+<p><strong>REGEXP (정규화)</strong> <br />
+정규화를 통해 특정 키워드가 포함되었는지 파악 가능하다.</p>
+
+<p><strong>REGEXP_LIKE (정규화 비교)</strong> <br />
+정규화를 통해 특정 키워드가 포함되었는지 파악 가능하다.</p>
+
+<h3 id="212-order-by-정렬">2.1.2 ORDER BY (정렬)</h3>
 
 <p>정렬기준을 선택할 수 있다.
 <strong>ASC</strong>(순차정렬)과 <strong>DESC</strong>(역정렬)로 정렬할 수 있으며,<br />
@@ -163,14 +200,7 @@ abc는 ALPHABET테이블의 별칭으로 같은 의미를 가진다. 아래의 <
 <p>해당코드는 데이터를 DATETIME기준으로 정렬후에, 이름으로 정렬한다.<br />
 (최종적으로는 이름으로 순차정렬. 이름이 같은 경우에만 날짜로 역정렬)</p>
 
-<h3 id="212-where">2.1.2 WHERE</h3>
-
-<p>기초수식을 조건으로 둘 수 있다.<br />
-프로그래밍과 다르게 등치기호를 <code class="language-plaintext highlighter-rouge">=</code> 하나만 쓴다.
-기초적인 대소비교 및 특정 값과의 비교가 가능하다.
-다중조건은 <code class="language-plaintext highlighter-rouge">AND</code>나 <code class="language-plaintext highlighter-rouge">OR</code>로 묶어줘야 한다.</p>
-
-<h3 id="213-limit">2.1.3 LIMIT</h3>
+<h3 id="213-limit-출력제한">2.1.3 LIMIT (출력제한)</h3>
 
 <p>정렬갯수에 제한을 걸고싶을 때 사용
 <code class="language-plaintext highlighter-rouge">LIMIT 10</code> 과 같이 사용하면 된다</p>
@@ -276,6 +306,8 @@ ON 일치조건(AND로 결합)
 <h5 id="having-조건문">HAVING 조건문</h5>
 
 <p>HAVING은 SUM, COUNT등과 결합하여 GROUP된 집합에서 필터링 조건을 추가한다.</p>
+
+<p><strong>DATEDIFF함수</strong></p>
 
 <h1 id="3-내용-정리">3. 내용 정리</h1>
 
