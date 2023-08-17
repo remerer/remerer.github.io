@@ -5,9 +5,9 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <title>Back-end</title>
-  <meta name='description' content="Flexton is a responsive and ultra-minimal theme for Jekyll.">
-  <link rel='canonical' href="http://localhost:4000/category/back-end/">
+  <title>SQL Language Introduce</title>
+  <meta name='description' content="SQL 개요">
+  <link rel='canonical' href="http://localhost:4000/SQL_0_Intro/">
   <link rel='alternate' type='application/rss+xml' title='Remer's Devlog' href="http://localhost:4000/feed.xml">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
@@ -92,160 +92,210 @@
 </aside> <!-- /.c-sidebar -->
 
 <main class="c-content">
-  <header class="c-header">
-  <div class="c-header__box">
-    <div class="c-search">
-      <div class="c-search__box">
-        <label for="js-search-input" class="u-screen-reader-text">Search for Blog</label>
-        <input type="text" id="js-search-input" class="c-search__text" autocomplete="off" placeholder="Type to search...">
-        <div data-icon='ei-search' data-size='s'></div>
+  <article class="c-article">
+  <div class="c-article__content" style="padding: 0 20px; margin: 0 30px;">
+    <header class="c-header u-hide u-no-margin-top">
+      <div class="c-header__box">
+        <div class="c-search u-full-width">
+          <div class="c-search__box">
+            <label for="js-search-input" class="u-screen-reader-text">Search for Blog</label>
+            <input type="text" id="js-search-input" class="c-search__text" autocomplete="off" placeholder="Type to search...">
+            <div data-icon='ei-search' data-size='s'></div>
+          </div>
+          <ul id="js-results-container" class="c-search-results-list"></ul>
+        </div>
       </div>
-      <ul id="js-results-container" class="c-search-results-list"></ul>
-    </div>
-    <div class="c-nav">
-      <ul class="c-nav__list u-lists-reset">
-        <li class="c-nav__item is-active">
-          <div data-icon='ei-pencil' data-size='s'></div> Posts</li>
-        <li class="c-nav__item">
-          <div data-icon='ei-star' data-size='s'></div> Categories</li>
-      </ul>
-    </div>
-  </div>
-</header> <!-- /.c-header -->
-<div class="c-posts o-opacity">
-  
-  <article class="c-post">
+    </header>
     
-    <a class="c-post-thumbnail" style="background-image: url(/images/2023-06-27-JAVA_Advanced/banner.png)"
-      href="/JAVA_Advanced/"></a>
+    <div class="c-article__image o-opacity" style="background-image: url( /images/2023-06-26-SQL_0_Intro/banner.png )"></div>
     
-    <div class="c-post-content">
-      <h2 class="c-post-title">
-        <a href="/JAVA_Advanced/">JAVA Advanced</a>
-      </h2>
-      <p>JAVA Advanced 1. 개요 자바(JAVA)에서 다른언어를 배울 때 익히지 못하거나, 특별히 다른 개념/문법들 정리 2....</p>
-      <span class="c-post-date">2023, Jun 27&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-      <span class="c-post-words">3 minute read</span>
-    </div>
-  </article>
-  
-</div> <!-- /.c-posts -->
-<div class="c-categories" style="display: none;">
-  <ul class="c-categories__list u-lists-reset">
-      
-    <li class="c-categories__item">
-      
-      <a class="c-categories__link" href="/category/ai/">
-        
-        
-        
-        <div class="c-categories__img">
-          <figure style="background-image: url('/images/2023-03-29/banner.png');"></figure>
-          <span class="c-categories__more">View all</span>
+    <div class="c-wrap-content" style="max-width: 1000px; margin: 0 auto;">
+      <header class="c-article__header">
+        <h1 class="c-article__title">SQL Language Introduce</h1>
+        <div class="c-article__date">
+          <span>Date Created : 2023, Jun 26<br>
+                Date Modified : 2023, Aug 17</span>  
         </div>
-        
-        
-        <div class="c-categories__container ">
-          <h2 class="c-categories__header">AI</h2>
-          <p class="c-categories__count"><span>1</span> Posts</p>
-        </div>
-      </a>
-    </li>
-    
-    <li class="c-categories__item">
-      
-      <a class="c-categories__link" href="/category/back-end/">
-        
-        
-        
-        <div class="c-categories__img">
-          <figure style="background-image: url('/images/2023-06-27-JAVA_Advanced/banner.png');"></figure>
-          <span class="c-categories__more">View all</span>
-        </div>
-        
-        
-        <div class="c-categories__container ">
-          <h2 class="c-categories__header">Back-end</h2>
-          <p class="c-categories__count"><span>1</span> Posts</p>
-        </div>
-      </a>
-    </li>
-    
-    <li class="c-categories__item">
-      
-      <a class="c-categories__link" href="/category/blog/">
-        
-        
-        
-        <div class="c-categories__img">
-          <figure style="background-image: url('/images/2023-07-05-Blog_Status/banner.png');"></figure>
-          <span class="c-categories__more">View all</span>
-        </div>
-        
-        
-        <div class="c-categories__container ">
-          <h2 class="c-categories__header">Blog</h2>
-          <p class="c-categories__count"><span>3</span> Posts</p>
-        </div>
-      </a>
-    </li>
-    
-    <li class="c-categories__item">
-      
-      <a class="c-categories__link" href="/category/db/">
-        
-        
-        
-        <div class="c-categories__img">
-          <figure style="background-image: url('/images/2023-08-17-MySQL_2_Group_&_Order/banner.png');"></figure>
-          <span class="c-categories__more">View all</span>
-        </div>
-        
-        
-        <div class="c-categories__container ">
-          <h2 class="c-categories__header">DB</h2>
-          <p class="c-categories__count"><span>3</span> Posts</p>
-        </div>
-      </a>
-    </li>
-    
-    <li class="c-categories__item">
-      
-      <a class="c-categories__link" href="/category/devops/">
-        
-        
-        
-          
-        
-        
-        <div class="c-categories__container c-empty-figure">
-          <h2 class="c-categories__header">DevOps</h2>
-          <p class="c-categories__count"><span>1</span> Posts</p>
-        </div>
-      </a>
-    </li>
-    
-    <li class="c-categories__item">
-      
-      <a class="c-categories__link" href="/category/devlog/">
-        
-        
-        
-        <div class="c-categories__img">
-          <figure style="background-image: url('/images/2023-08-17-Jekyll_Blog_Renewal_Plan/banner.png');"></figure>
-          <span class="c-categories__more">View all</span>
-        </div>
-        
-        
-        <div class="c-categories__container ">
-          <h2 class="c-categories__header">Devlog</h2>
-          <p class="c-categories__count"><span>3</span> Posts</p>
-        </div>
-      </a>
-    </li>
-    
+      </header>
+      <!-- 목차 -->
+      <ul class="c-inline-toc"><li><a href="#sql-개요">SQL 개요</a></li><li><a href="#1-sql-이란">1. SQL 이란</a><ul><li><a href="#11-hello-world">1.1 Hello world</a></li></ul></li><li><a href="#2-sql기초-문법">2. SQL기초 문법</a></li><li><a href="#3-연관문서--참고자료">3. 연관문서 &amp; 참고자료</a></li></ul>
+
+      <!-- 내용 -->
+      <h1 id="sql-개요">SQL 개요</h1>
+
+<p><br /></p>
+
+<h1 id="1-sql-이란">1. SQL 이란</h1>
+
+<hr />
+
+<h2 id="11-hello-world">1.1 Hello world</h2>
+
+<p>SQL Query는 주어진 DB에서 원하는 데이터만 불러오기 위한 질의문(조건? 형식? 언어?)이다.<br />
+구성은, 스키마 ⊃ 테이블(표) ⊃ 컬럼(열, Column)로 이루어져 있다.<br />
+모든 명령어는 대소문자를 구분하지 않는다.</p>
+
+<p>문법을 통해 특정 테이블로 불러오더라도,<br />
+보여지지 않는 조건으로 정렬하거나 할 수 있다.</p>
+
+<p>SQL Query는 DB에서 <strong>어떤 데이터를 선택</strong> 하고,<br />
+어떤 데이터를 DB에서 <strong>추가/제거할지 결정(정제)</strong>하는 문법이라고 보면 된다.</p>
+
+<p><br /></p>
+
+<h1 id="2-sql기초-문법">2. SQL기초 문법</h1>
+
+<p>SQL문법을 조작하는 내용에 따라 조작어/정의어/제어어로 나눈다고 한다.<br />
+서로 별도로 사용되는 문법은 아니지만, 조작하는 대상(컬럼/테이블/무결성)에 따라 세가지로 나뉜다.</p>
+
+<blockquote>
+  <p><strong>데이터 조작어</strong> : 데이터베이스에서 필요한 데이터를 추출하기 위해 가공하는 문법
+데이터의 컬럼을 조작</p>
+  <ul>
+    <li>SELECT, INSERT, UPDATE, DELETE…</li>
   </ul>
-</div> <!-- ./c-categories -->
+</blockquote>
+
+<blockquote>
+  <p><strong>데이터 정의어</strong> : 데이터베이스 <u>테이블</u>을 구성, 변경할때 사용하는 문법
+데이터 테이블을 조작</p>
+  <ul>
+    <li>CREATE, ALTER, DROP, RENAME…</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p><strong>데이터 제어어</strong> : 데이터의 검사, 보안, 무결성 등 관리/검사 목적으로 사용하는 문법
+그 외의 보안 및 검사항목을 조작</p>
+  <ul>
+    <li>GRANT, REVOKE…</li>
+  </ul>
+</blockquote>
+
+<p><br /></p>
+
+<h1 id="3-연관문서--참고자료">3. 연관문서 &amp; 참고자료</h1>
+<hr />
+
+<p><strong>연관포스팅</strong></p>
+
+<!-- **[0. SQL 개요](../SQL_0_Intro)**    -->
+<p><strong><a href="../MySQL_1_DML">1. MySQL 조작어</a></strong> <br />
+<strong><a href="../MySQL_2_Group_&amp;_Order">2. MySQL 정렬&amp;분류</a></strong></p>
+
+<p><strong>참고자료</strong></p>
+<ol>
+  <li><a href="https://www.postgresql.kr/docs/10/sql-keywords-appendix.html">PostgreSQL 키워드</a></li>
+  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 키워드</a></li>
+  <li><a href="https://docs.oracle.com/cd/A97630_01/appdev.920/a42525/apb.htm">Oracle 키워드</a></li>
+</ol>
+
+      <div class="toc">
+        <a href="#">&lt;맨 위로&gt;</a>
+      </div>
+      <div class="c-article__footer u-clearfix">
+        <div class="c-article__tag">
+          
+          <a href="/tags#MySQL">&#35; MySQL</a>
+          
+          <a href="/tags#PostgreSQL">&#35; PostgreSQL</a>
+          
+          <a href="/tags#Oracle">&#35; Oracle</a>
+          
+        </div>
+        <div class="c-article__share">
+          <a href="https://twitter.com/intent/tweet?text=SQL%20Language%20Introduce&url=http://localhost:4000/SQL_0_Intro/" title="Share
+          on Twitter" rel="nofollow" target="_blank"><div data-icon='ei-sc-twitter' data-size='s'></div></a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/SQL_0_Intro/" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
+        </div>
+      </div>
+      <div class="c-newsletter">
+  <div class="c-newsletter__header">
+    <h4 class="c-newsletter__title">Newsletter</h4>
+    <div class="c-newsletter__subtitle">Subscribe to this blog and receive notifications of new posts by email.</div>
+  </div>
+  <form class="c-newsletter-form validate" action="#" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+    <div class="c-newsletter-form__group">
+      <label class="u-screen-reader-text" for="mce-EMAIL">Email address</label>
+      <input class="c-newsletter__email required email" id="mce-EMAIL" type="email" name="EMAIL" placeholder="Your email address" autocomplete="on">
+      <input class="c-newsletter__button" id="mc-embedded-subscribe" type="submit" name="subscribe" value="Subscribe">
+    </div>
+  </form>
+</div> <!-- /.c-newsletter -->
+      <div class="c-recent-post">
+        <h4 class="c-recent__title">You might also enjoy</h4>
+        <div class="c-recent__box">
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/MySQL_2_Group_&_Order/" style="background-image: url( /images/2023-08-17-MySQL_2_Group_&_Order/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/MySQL_2_Group_&_Order/">MySQL_2_정렬 & 그룹화하기</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-08-17T00:00:00+09:00">August 17, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/Jekyll_Blog_Renewal_Plan/" style="background-image: url( /images/2023-08-17-Jekyll_Blog_Renewal_Plan/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/Jekyll_Blog_Renewal_Plan/">Jekyll Blog Renewal Plan</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-08-17T00:00:00+09:00">August 17, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/Blog_Status/" style="background-image: url( /images/2023-07-05-Blog_Status/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/Blog_Status/">Blog 진행상황</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-07-05T00:00:00+09:00">July 5, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/JAVA_Advanced/" style="background-image: url( /images/2023-06-27-JAVA_Advanced/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/JAVA_Advanced/">JAVA Advanced</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-06-27T00:00:00+09:00">June 27, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        </div>
+      </div> <!-- /.c-recent-post -->
+      
+        <div class="c-comments">
+  <div id="disqus_thread" class="article-comments"></div>
+  <script>
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = '//remerer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+</div> <!-- /.c-comments -->
+      
+    </div> <!-- /.c-wrap-content -->
+  </div> <!-- /.c-article__content -->
+</article> <!-- /.c-article-page -->
+
 </main> <!-- /.c-content -->
   </div> <!-- /.o-wrapper -->
   <div class="c-top" data-icon='ei-chevron-up' data-size='s' title="Scroll To Top"></div> <!-- /.c-top -->

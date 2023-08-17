@@ -5,9 +5,9 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <title>SQL Language Introduce</title>
-  <meta name='description' content="SQL 개요">
-  <link rel='canonical' href="http://localhost:4000/SQL_1_Intro/">
+  <title>MySQL_2_정렬 & 그룹화하기</title>
+  <meta name='description' content="MySQL 정렬, 그룹화하기 (GROUP &amp; ORDER)">
+  <link rel='canonical' href="http://localhost:4000/MySQL_2_Group_&_Order/">
   <link rel='alternate' type='application/rss+xml' title='Remer's Devlog' href="http://localhost:4000/feed.xml">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
@@ -107,88 +107,223 @@
       </div>
     </header>
     
-    <div class="c-article__image o-opacity" style="background-image: url( /images/2023-06-26-SQL_1_Intro/banner.png )"></div>
+    <div class="c-article__image o-opacity" style="background-image: url( /images/2023-08-17-MySQL_2_Group_&_Order/banner.png )"></div>
     
     <div class="c-wrap-content" style="max-width: 1000px; margin: 0 auto;">
       <header class="c-article__header">
-        <h1 class="c-article__title">SQL Language Introduce</h1>
+        <h1 class="c-article__title">MySQL_2_정렬 & 그룹화하기</h1>
         <div class="c-article__date">
-          <span>Date Created : 2023, Jun 26<br>
-                Date Modified : 2023, Jul 25</span>  
+          <span>Date Created : 2023, Aug 17<br>
+                Date Modified : 2023, Aug 17</span>  
         </div>
       </header>
       <!-- 목차 -->
-      <ul class="c-inline-toc"><li><a href="#sql-개요">SQL 개요</a></li><li><a href="#1-sql-이란">1. SQL 이란</a><ul><li><a href="#11-hello-world">1.1 Hello world</a></li></ul></li><li><a href="#2-sql기초-문법">2. SQL기초 문법</a></li><li><a href="#3-연관문서--참고자료">3. 연관문서 &amp; 참고자료</a></li></ul>
+      <ul class="c-inline-toc"><li><a href="#mysql-정렬-그룹화하기-group--order">MySQL 정렬, 그룹화하기 (GROUP &amp; ORDER)</a></li><li><a href="#1-group-by">1. GROUP BY</a></li><li><a href="#2-order-by">2. ORDER BY</a></li><li><a href="#3-연관포스팅">3. 연관포스팅</a></li></ul>
 
       <!-- 내용 -->
-      <h1 id="sql-개요">SQL 개요</h1>
+      <h1 id="mysql-정렬-그룹화하기-group--order">MySQL 정렬, 그룹화하기 (GROUP &amp; ORDER)</h1>
 
 <p><br /></p>
 
-<h1 id="1-sql-이란">1. SQL 이란</h1>
-
+<h1 id="1-group-by">1. GROUP BY</h1>
 <hr />
 
-<h2 id="11-hello-world">1.1 Hello world</h2>
+<p>여러개의 컬럼을 특정 데이터를 기준삼아 같은것 끼리 묶어줄 수 있다.</p>
 
-<p>SQL Query는 주어진 DB에서 원하는 데이터만 불러오기 위한 질의문(조건? 형식? 언어?)이다.<br />
-스키마 ⊃ 테이블(표) ⊃ 컬럼(열, Column)로 이루어져 있다.<br />
-모든 명령어는 대소문자를 구분하지 않는다.</p>
+<blockquote>
+  <p><strong>GROUP BY</strong> <em>컬럼명</em> <strong>ON</strong> <em>조건</em></p>
+</blockquote>
 
-<p>문법을 통해 특정 테이블로 불러오더라도,<br />
-보여지지 않는 조건으로 정렬하거나 할 수 있다.</p>
+<p>다음과 같이 ASCII코드표의 <strong>일부</strong>가 <code class="language-plaintext highlighter-rouge">ASCII_DB</code>라는 테이블로 저장되어 있다고 하자,</p>
 
-<p>SQL Query는 DB에서 <strong>어떤 데이터를 선택</strong> 하고,<br />
-어떤 데이터를 DB에서 <strong>추가/제거할지 결정</strong>하는 문법이라고 보면 된다.</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">DEC_NUM</th>
+      <th style="text-align: center">CHAR</th>
+      <th style="text-align: center">UPPER_CASE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">65</td>
+      <td style="text-align: center">A</td>
+      <td style="text-align: center">YES</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">66</td>
+      <td style="text-align: center">B</td>
+      <td style="text-align: center">YES</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">67</td>
+      <td style="text-align: center">C</td>
+      <td style="text-align: center">YES</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">68</td>
+      <td style="text-align: center">D</td>
+      <td style="text-align: center">YES</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">97</td>
+      <td style="text-align: center">a</td>
+      <td style="text-align: center">NO</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">98</td>
+      <td style="text-align: center">b</td>
+      <td style="text-align: center">NO</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>다음과 같이 UPPER_CASE로 묶어 대,소문자의 갯수를 셀 수 있다.</p>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">IF</span><span class="p">(</span><span class="nv">"UPPER_CASE"</span> <span class="o">=</span> <span class="nv">"YES"</span><span class="p">,</span><span class="nv">"UPPER"</span><span class="p">,</span><span class="nv">"LOWER"</span><span class="p">)</span> <span class="k">AS</span> <span class="n">LATTER_CASE</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="k">COUNT</span>   
+<span class="k">FROM</span> <span class="n">ASCII_DB</span>   
+<span class="n">GRDER</span> <span class="k">BY</span> <span class="n">UPPER_CASE</span> <span class="k">ON</span> <span class="n">UPPER_CASE</span></code></pre>
+</figure>
+
+<p>해당 내용은 다음 결과를 도출한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">LATTER_CASE</th>
+      <th style="text-align: center">COUNT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">UPPER</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">LOWER</td>
+      <td style="text-align: center">2</td>
+    </tr>
+  </tbody>
+</table>
 
 <p><br /></p>
 
-<h1 id="2-sql기초-문법">2. SQL기초 문법</h1>
-
-<p>SQL문법을 조작하는 내용에 따라 조작어/정의어/제어어로 나눈다고 한다.<br />
-서로 별도로 사용되는 문법은 아니지만, 조작하는 대상(컬럼/테이블/무결성)에 따라 세가지로 나뉜다.</p>
-
-<blockquote>
-  <p><strong>데이터 조작어</strong> : 데이터베이스에서 필요한 데이터를 추출하기 위해 가공하는 문법
-데이터의 컬럼을 조작</p>
-  <ul>
-    <li>SELECT, INSERT, UPDATE, DELETE…</li>
-  </ul>
-</blockquote>
-
-<blockquote>
-  <p><strong>데이터 정의어</strong> : 데이터베이스 <u>테이블</u>을 구성, 변경할때 사용하는 문법
-데이터 테이블을 조작</p>
-  <ul>
-    <li>CREATE, ALTER, DROP, RENAME…</li>
-  </ul>
-</blockquote>
-
-<blockquote>
-  <p><strong>데이터 제어어</strong> : 데이터의 검사, 보안, 무결성 등 관리/검사 목적으로 사용하는 문법
-그 외의 보안 및 검사항목을 조작</p>
-  <ul>
-    <li>GRANT, REVOKE…</li>
-  </ul>
-</blockquote>
-
-<p><br /></p>
-
-<h1 id="3-연관문서--참고자료">3. 연관문서 &amp; 참고자료</h1>
+<h1 id="2-order-by">2. ORDER BY</h1>
 <hr />
 
-<p><strong>연관문서</strong></p>
+<p>SQL쿼리로 도출된 결과를 조건에 따라 정렬할 수 있다. <br />
+여러번 정렬 시 <code class="language-plaintext highlighter-rouge">,</code>로 각 조건을 연결하고, 앞에서 부터 순차적으로 정렬된다. (뒤의 조건으로 정렬되고, 같은조건일 때 앞의 조건으로 정렬)</p>
 
-<p><strong><a href="../SQL_2_DML">2. SQL 조작어</a></strong> <br />
-<strong><a href="../">3. SQL 정의어</a></strong> <br />
-<strong><a href="../">4. SQL 제어어</a></strong></p>
+<blockquote>
+  <p><strong>ORDER BY</strong> <em>컬럼명</em> <strong>ON</strong> <em>조건</em> <strong>[ASC or DESC]</strong></p>
+</blockquote>
 
-<p><strong>참고자료</strong></p>
-<ol>
-  <li><a href="https://www.postgresql.kr/docs/10/sql-keywords-appendix.html">PostgreSQL 키워드</a></li>
-  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 키워드</a></li>
-  <li><a href="https://docs.oracle.com/cd/A97630_01/appdev.920/a42525/apb.htm">Oracle 키워드</a></li>
-</ol>
+<p>오름차순(ASC)은 생략가능, DESC를 추가해 내림차순으로 정렬가능 <br />
+다음과 같은 상품 테이블 <code class="language-plaintext highlighter-rouge">GOODS_DB</code>이 있다고 하자.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">NAME</th>
+      <th style="text-align: center">PRICE</th>
+      <th style="text-align: center">COUNT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">PEN</td>
+      <td style="text-align: center">500</td>
+      <td style="text-align: center">150</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">ERASER</td>
+      <td style="text-align: center">300</td>
+      <td style="text-align: center">30</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">RULER</td>
+      <td style="text-align: center">700</td>
+      <td style="text-align: center">20</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">MAGNET</td>
+      <td style="text-align: center">700</td>
+      <td style="text-align: center">30</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PAPER</td>
+      <td style="text-align: center">200</td>
+      <td style="text-align: center">150</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GLUE</td>
+      <td style="text-align: center">500</td>
+      <td style="text-align: center">100</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="n">GOODS_DB</span> <span class="n">GD</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">GD</span><span class="p">.</span><span class="n">PRICE</span><span class="p">,</span> <span class="n">GD</span><span class="p">.</span><span class="k">COUNT</span> <span class="k">DESC</span></code></pre>
+</figure>
+
+<p>해당 쿼리문을 작성하면, 아래의 결과를 도출한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>PRICE</th>
+      <th>COUNT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PAPER</td>
+      <td>200</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <td>PEN</td>
+      <td>500</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <td>GLUE</td>
+      <td>500</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>RULER</td>
+      <td>700</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>ERASER</td>
+      <td>300</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>MAGNET</td>
+      <td>700</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>COUNT기준으로 내림차순 정렬하지만, 같은조건일때는 먼저 정렬했던, PRICE기준으로 정렬(오름차순)된다.</p>
+
+<h1 id="3-연관포스팅">3. 연관포스팅</h1>
+<hr />
+
+<p><strong>연관포스팅</strong></p>
+
+<p><strong><a href="../SQL_0_Intro">0. SQL 개요</a></strong> <br />
+<strong><a href="../MySQL_1_DML">1. MySQL 조작어</a></strong> <br />
+<!-- **[2. MySQL 정렬&그룹화](../MySQL_2_Group_&_Order)**    --></p>
 
       <div class="toc">
         <a href="#">&lt;맨 위로&gt;</a>
@@ -196,17 +331,15 @@
       <div class="c-article__footer u-clearfix">
         <div class="c-article__tag">
           
+          <a href="/tags#SQL Query">&#35; SQL Query</a>
+          
           <a href="/tags#MySQL">&#35; MySQL</a>
-          
-          <a href="/tags#PostgreSQL">&#35; PostgreSQL</a>
-          
-          <a href="/tags#Oracle">&#35; Oracle</a>
           
         </div>
         <div class="c-article__share">
-          <a href="https://twitter.com/intent/tweet?text=SQL%20Language%20Introduce&url=http://localhost:4000/SQL_1_Intro/" title="Share
+          <a href="https://twitter.com/intent/tweet?text=MySQL_2_%EC%A0%95%EB%A0%AC%20&%20%EA%B7%B8%EB%A3%B9%ED%99%94%ED%95%98%EA%B8%B0&url=http://localhost:4000/MySQL_2_Group_&_Order/" title="Share
           on Twitter" rel="nofollow" target="_blank"><div data-icon='ei-sc-twitter' data-size='s'></div></a>
-          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/SQL_1_Intro/" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/MySQL_2_Group_&_Order/" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
         </div>
       </div>
       <div class="c-newsletter">
@@ -225,6 +358,18 @@
       <div class="c-recent-post">
         <h4 class="c-recent__title">You might also enjoy</h4>
         <div class="c-recent__box">
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/Jekyll_Blog_Renewal_Plan/" style="background-image: url( /images/2023-08-17-Jekyll_Blog_Renewal_Plan/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/Jekyll_Blog_Renewal_Plan/">Jekyll Blog Renewal Plan</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-08-17T00:00:00+09:00">August 17, 2023</time>
+              </div>
+            </div>
+          </div>
+        
         
         
           <div class="c-recent__item">
@@ -252,21 +397,9 @@
         
         
           <div class="c-recent__item">
-            <a class="c-recent__image" href="/SQL_2_DML/" style="background-image: url( /images/2023-07-17-SQL_2_DML/banner.png)"></a>
+            <a class="c-recent__image" href="/MySQL_1_DML/" style="background-image: url( /images/2023-07-17-MySQL_1_DML/banner.png)"></a>
             <div class="c-recent__footer">
-              <h4><a href="/SQL_2_DML/">SQL Data Manipulation Language</a></h4>
-              <div class="c-recent__date">
-                <time datetime="2023-06-26T00:00:00+09:00">June 26, 2023</time>
-              </div>
-            </div>
-          </div>
-        
-        
-        
-          <div class="c-recent__item">
-            <a class="c-recent__image" href="/Back-end_Dev_Learning/" style="background-image: url( /images/2023-06-26-Back-end_Dev_Learning/banner.png)"></a>
-            <div class="c-recent__footer">
-              <h4><a href="/Back-end_Dev_Learning/">Back-end Dev Learning</a></h4>
+              <h4><a href="/MySQL_1_DML/">MySQL Data Manipulation Language</a></h4>
               <div class="c-recent__date">
                 <time datetime="2023-06-26T00:00:00+09:00">June 26, 2023</time>
               </div>

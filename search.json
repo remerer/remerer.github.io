@@ -1,6 +1,22 @@
 [
   
     {
+      "title"    : "MySQL_2_정렬 &amp; 그룹화하기",
+      "category" : "",
+      "tags"     : "SQL Query and MySQL",
+      "url"      : "/MySQL_2_Group_&_Order/",
+      "date"     : "2023-08-17 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Jekyll Blog Renewal Plan",
+      "category" : "",
+      "tags"     : "Jekyll and HTML",
+      "url"      : "/Jekyll_Blog_Renewal_Plan/",
+      "date"     : "2023-08-17 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "Blog 진행상황",
       "category" : "",
       "tags"     : "Jekyll, Ruby, and HTML",
@@ -17,10 +33,10 @@
     } ,
   
     {
-      "title"    : "SQL Data Manipulation Language",
+      "title"    : "MySQL Data Manipulation Language",
       "category" : "",
-      "tags"     : "SQL Query",
-      "url"      : "/SQL_2_DML/",
+      "tags"     : "SQL Query and MySQL",
+      "url"      : "/MySQL_1_DML/",
       "date"     : "2023-06-26 00:00:00 +0900"
     } ,
   
@@ -28,7 +44,7 @@
       "title"    : "SQL Language Introduce",
       "category" : "",
       "tags"     : "MySQL, PostgreSQL, and Oracle",
-      "url"      : "/SQL_1_Intro/",
+      "url"      : "/SQL_0_Intro/",
       "date"     : "2023-06-26 00:00:00 +0900"
     } ,
   

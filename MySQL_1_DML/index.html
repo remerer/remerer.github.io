@@ -5,9 +5,9 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <title>Back-end</title>
-  <meta name='description' content="Flexton is a responsive and ultra-minimal theme for Jekyll.">
-  <link rel='canonical' href="http://localhost:4000/category/back-end/">
+  <title>MySQL Data Manipulation Language</title>
+  <meta name='description' content="MySQL 조작어 (Data Manipulation Language)">
+  <link rel='canonical' href="http://localhost:4000/MySQL_1_DML/">
   <link rel='alternate' type='application/rss+xml' title='Remer's Devlog' href="http://localhost:4000/feed.xml">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
@@ -92,160 +92,340 @@
 </aside> <!-- /.c-sidebar -->
 
 <main class="c-content">
-  <header class="c-header">
-  <div class="c-header__box">
-    <div class="c-search">
-      <div class="c-search__box">
-        <label for="js-search-input" class="u-screen-reader-text">Search for Blog</label>
-        <input type="text" id="js-search-input" class="c-search__text" autocomplete="off" placeholder="Type to search...">
-        <div data-icon='ei-search' data-size='s'></div>
+  <article class="c-article">
+  <div class="c-article__content" style="padding: 0 20px; margin: 0 30px;">
+    <header class="c-header u-hide u-no-margin-top">
+      <div class="c-header__box">
+        <div class="c-search u-full-width">
+          <div class="c-search__box">
+            <label for="js-search-input" class="u-screen-reader-text">Search for Blog</label>
+            <input type="text" id="js-search-input" class="c-search__text" autocomplete="off" placeholder="Type to search...">
+            <div data-icon='ei-search' data-size='s'></div>
+          </div>
+          <ul id="js-results-container" class="c-search-results-list"></ul>
+        </div>
       </div>
-      <ul id="js-results-container" class="c-search-results-list"></ul>
-    </div>
-    <div class="c-nav">
-      <ul class="c-nav__list u-lists-reset">
-        <li class="c-nav__item is-active">
-          <div data-icon='ei-pencil' data-size='s'></div> Posts</li>
-        <li class="c-nav__item">
-          <div data-icon='ei-star' data-size='s'></div> Categories</li>
-      </ul>
-    </div>
-  </div>
-</header> <!-- /.c-header -->
-<div class="c-posts o-opacity">
-  
-  <article class="c-post">
+    </header>
     
-    <a class="c-post-thumbnail" style="background-image: url(/images/2023-06-27-JAVA_Advanced/banner.png)"
-      href="/JAVA_Advanced/"></a>
+    <div class="c-article__image o-opacity" style="background-image: url( /images/2023-07-17-MySQL_1_DML/banner.png )"></div>
     
-    <div class="c-post-content">
-      <h2 class="c-post-title">
-        <a href="/JAVA_Advanced/">JAVA Advanced</a>
-      </h2>
-      <p>JAVA Advanced 1. 개요 자바(JAVA)에서 다른언어를 배울 때 익히지 못하거나, 특별히 다른 개념/문법들 정리 2....</p>
-      <span class="c-post-date">2023, Jun 27&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-      <span class="c-post-words">3 minute read</span>
-    </div>
-  </article>
-  
-</div> <!-- /.c-posts -->
-<div class="c-categories" style="display: none;">
-  <ul class="c-categories__list u-lists-reset">
-      
-    <li class="c-categories__item">
-      
-      <a class="c-categories__link" href="/category/ai/">
-        
-        
-        
-        <div class="c-categories__img">
-          <figure style="background-image: url('/images/2023-03-29/banner.png');"></figure>
-          <span class="c-categories__more">View all</span>
+    <div class="c-wrap-content" style="max-width: 1000px; margin: 0 auto;">
+      <header class="c-article__header">
+        <h1 class="c-article__title">MySQL Data Manipulation Language</h1>
+        <div class="c-article__date">
+          <span>Date Created : 2023, Jun 26<br>
+                Date Modified : 2023, Aug 17</span>  
         </div>
-        
-        
-        <div class="c-categories__container ">
-          <h2 class="c-categories__header">AI</h2>
-          <p class="c-categories__count"><span>1</span> Posts</p>
-        </div>
-      </a>
-    </li>
-    
-    <li class="c-categories__item">
-      
-      <a class="c-categories__link" href="/category/back-end/">
-        
-        
-        
-        <div class="c-categories__img">
-          <figure style="background-image: url('/images/2023-06-27-JAVA_Advanced/banner.png');"></figure>
-          <span class="c-categories__more">View all</span>
-        </div>
-        
-        
-        <div class="c-categories__container ">
-          <h2 class="c-categories__header">Back-end</h2>
-          <p class="c-categories__count"><span>1</span> Posts</p>
-        </div>
-      </a>
-    </li>
-    
-    <li class="c-categories__item">
-      
-      <a class="c-categories__link" href="/category/blog/">
-        
-        
-        
-        <div class="c-categories__img">
-          <figure style="background-image: url('/images/2023-07-05-Blog_Status/banner.png');"></figure>
-          <span class="c-categories__more">View all</span>
-        </div>
-        
-        
-        <div class="c-categories__container ">
-          <h2 class="c-categories__header">Blog</h2>
-          <p class="c-categories__count"><span>3</span> Posts</p>
-        </div>
-      </a>
-    </li>
-    
-    <li class="c-categories__item">
-      
-      <a class="c-categories__link" href="/category/db/">
-        
-        
-        
-        <div class="c-categories__img">
-          <figure style="background-image: url('/images/2023-08-17-MySQL_2_Group_&_Order/banner.png');"></figure>
-          <span class="c-categories__more">View all</span>
-        </div>
-        
-        
-        <div class="c-categories__container ">
-          <h2 class="c-categories__header">DB</h2>
-          <p class="c-categories__count"><span>3</span> Posts</p>
-        </div>
-      </a>
-    </li>
-    
-    <li class="c-categories__item">
-      
-      <a class="c-categories__link" href="/category/devops/">
-        
-        
-        
+      </header>
+      <!-- 목차 -->
+      <ul class="c-inline-toc"><li><a href="#mysql-조작어-data-manipulation-language">MySQL 조작어 (Data Manipulation Language)</a></li><li><a href="#1-mysql-조작어">1. MySQL 조작어</a><ul><li><a href="#21-select">2.1 SELECT</a><ul><li><a href="#211-where-조건문">2.1.1 WHERE (조건문)</a></li><li><a href="#212-order-by-정렬">2.1.2 ORDER BY (정렬)</a></li><li><a href="#213-limit-출력제한">2.1.3 LIMIT (출력제한)</a></li><li><a href="#214-as--distinct">2.1.4 AS &amp; DISTINCT</a></li><li><a href="#214-ifnull">2.1.4 IFNULL</a></li><li><a href="#215-date_format">2.1.5 DATE_FORMAT</a></li><li><a href="#22-join">2.2 JOIN</a><ul><li><a href="#221-cross-join">2.2.1 CROSS JOIN</a></li><li><a href="#222-inner-join">2.2.2 INNER JOIN</a></li><li><a href="#223-outer-join">2.2.3 OUTER JOIN</a></li><li><a href="#224-group-by">2.2.4 GROUP BY</a><ul><li><a href="#having-조건문">HAVING 조건문</a></li></ul></li></ul></li></ul></li></ul></li><li><a href="#3-연관문서--참고자료">3. 연관문서 &amp; 참고자료</a></li></ul>
+
+      <!-- 내용 -->
+      <h1 id="mysql-조작어-data-manipulation-language">MySQL 조작어 (Data Manipulation Language)</h1>
+
+<p><br /></p>
+
+<h1 id="1-mysql-조작어">1. MySQL 조작어</h1>
+
+<hr />
+
+<p>조작어는 크게 4가지 SELECT(선택), INSERT(삽입), UPDATE(수정), DELETE(삭제)로 나뉜다.<br />
+이 외에 자주사용되는 키워드들과 엮어 세부 카테고리로 나누었다.<br />
+세부 키워드는 <code class="language-plaintext highlighter-rouge">　　　</code> 와 같이 하이라이트 처리</p>
+
+<h2 id="21-select">2.1 SELECT</h2>
+
+<p>데이터의 선택</p>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ALPHABET</span> <span class="n">abc</span></code></pre>
+</figure>
+
+<p>필요한 내용들(컬럼 이름)을 선택하고, <code class="language-plaintext highlighter-rouge">SELECT</code><br />
+ALPHABET이라는 이름을 가진 테이블에서 불러온다는 의미<code class="language-plaintext highlighter-rouge">FROM ALPHABET</code><br />
+여기서, <code class="language-plaintext highlighter-rouge">*</code>는 전체 컬럼을 불러온다는 의미이므로,<br />
+해당 질의어는 ALPHABET테이블 전체를 불러오게 된다.
+abc는 ALPHABET테이블의 별칭으로 같은 의미를 가진다. 아래의 <code class="language-plaintext highlighter-rouge">AS</code>구문과 동일</p>
+
+<h3 id="211-where-조건문">2.1.1 WHERE (조건문)</h3>
+
+<p>수식기호를 조건으로 둘 수 있다.(비교 및 수리/논리연산)  <br />
+프로그램 언어들과 다르게 등치기호를 <code class="language-plaintext highlighter-rouge">=</code> 하나만 쓴다. <br />
+다중조건은 <code class="language-plaintext highlighter-rouge">AND</code>나 <code class="language-plaintext highlighter-rouge">OR</code>로 묶어줘야 한다.</p>
+
+<p><strong>LIKE</strong> <br />
+<code class="language-plaintext highlighter-rouge">LIKE</code>는 해당 내용과 유사한지 판별하는 구문 <br />
+<code class="language-plaintext highlighter-rouge">"%keyword%"</code>의 형식으로 입력한다면, 해당 내용을 포함하는지 확인할 수 있다.
+해당 구문은 단 1개의 조건(컬럼 OR 문자열)과만 비교 가능하며,
+OR 로 연결한다고 해서 여러가지 문자열을 검색하지 않는다. <br />
+이는, 해당 비교조건이 컬럼일 때 OR로 묶이는 범위의 모호성을 배제하고 <br />
+여러가지 Colume의 비교를 하나의 WHERE문을 묶어줄 수 있게한다.</p>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">REGISTER</span> <span class="n">reg</span>
+<span class="k">WHERE</span> <span class="n">NAME</span> <span class="k">LIKE</span> <span class="nv">"%Tom%"</span></code></pre>
+</figure>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">REGISTER</span> <span class="n">reg</span>
+<span class="k">WHERE</span> <span class="n">ADDRESS</span> <span class="k">LIKE</span> <span class="n">CITY</span>
+<span class="cm">/* WHERE ADDRESS LIKE CITY OR CONTRY */</span>
+<span class="cm">/* 해당 비교문은  */</span>
+<span class="cm">/* WHERE [ADDRESS LIKE CITY] OR [CONTRY] 로 동작함 */</span></code></pre>
+</figure>
+
+<p><strong>REGEXP (정규화)</strong> <br />
+정규화를 통해 특정 키워드가 포함되었는지 파악 가능하다.</p>
+
+<p><strong>REGEXP_LIKE (정규화 비교)</strong> <br />
+정규화를 통해 특정 키워드가 포함되었는지 파악 가능하다.</p>
+
+<h3 id="212-order-by-정렬">2.1.2 ORDER BY (정렬)</h3>
+
+<p>정렬기준을 선택할 수 있다.
+<strong>ASC</strong>(순차정렬)과 <strong>DESC</strong>(역정렬)로 정렬할 수 있으며,<br />
+정렬조건이 여러개라면 뒤의것부터 정렬한 뒤에 앞에것을 정렬한다.
+다중정렬의 구분은 <code class="language-plaintext highlighter-rouge">,(콤마)</code>로 한다.</p>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">ANIMAL_ID</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="nb">DATETIME</span>  
+<span class="o">&gt;</span> <span class="k">FROM</span> <span class="n">ANIMAL_INS</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">NAME</span> <span class="k">ASC</span><span class="p">,</span> <span class="nb">DATETIME</span> <span class="k">DESC</span></code></pre>
+</figure>
+
+<p>해당코드는 데이터를 DATETIME기준으로 정렬후에, 이름으로 정렬한다.<br />
+(최종적으로는 이름으로 순차정렬. 이름이 같은 경우에만 날짜로 역정렬)</p>
+
+<h3 id="213-limit-출력제한">2.1.3 LIMIT (출력제한)</h3>
+
+<p>정렬갯수에 제한을 걸고싶을 때 사용
+<code class="language-plaintext highlighter-rouge">LIMIT 10</code> 과 같이 사용하면 된다</p>
+
+<h3 id="214-as--distinct">2.1.4 AS &amp; DISTINCT</h3>
+
+<p><strong>AS</strong> : 컬럼명을 변경하고 싶을 때 사용.<br />
+<strong>DISTINCT</strong> : 중복된 값을 제거하고 싶을 때.</p>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">NAME</span><span class="p">)</span> <span class="k">AS</span> <span class="n">nameNum</span>
+<span class="k">FROM</span> <span class="k">TABLE</span></code></pre>
+</figure>
+
+<p>중복된 <code class="language-plaintext highlighter-rouge">NAME</code>을 제거한 개수를 nameNum 컬럼으로 제공</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">96</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h3 id="214-ifnull">2.1.4 IFNULL</h3>
+
+<p>해당 값이 NULL일때, 대체하여 입력할 값</p>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">PT_NAME</span><span class="p">,</span> <span class="n">PT_NO</span><span class="p">,</span> <span class="n">GEND_CD</span><span class="p">,</span> <span class="n">AGE</span><span class="p">,</span> <span class="n">IFNULL</span><span class="p">(</span><span class="n">TLNO</span><span class="p">,</span> <span class="s1">'NONE'</span><span class="p">)</span> <span class="k">AS</span> <span class="n">TLNO</span>
+<span class="k">FROM</span> <span class="n">PATIENT</span> <span class="k">WHERE</span> <span class="n">AGE</span> <span class="o">&lt;=</span> <span class="mi">12</span> <span class="k">AND</span> <span class="n">GEND_CD</span> <span class="o">=</span> <span class="nv">"W"</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">AGE</span> <span class="k">DESC</span><span class="p">,</span> <span class="n">PT_NAME</span> <span class="k">ASC</span></code></pre>
+</figure>
+
+<p>TLNO가 NULL일때, “NONE” 출력</p>
+
+<p>*추가로, NULL값을 판단할때는 <code class="language-plaintext highlighter-rouge">=</code>가 아닌 IS를 사용해야 한다.</p>
+
+<h3 id="215-date_format">2.1.5 DATE_FORMAT</h3>
+
+<p>DATE_FORMAT(입력값, 출력형식 or 출력 TEXT)
+출력형식은 “%Y-%M-%D”, “%y/%m/%d”, “%y년 %m월 %d일” 등으로 표기할 수 있다.<br />
+해당 출력형식은 대소문자를 구분한다.</p>
+
+<h3 id="22-join">2.2 JOIN</h3>
+
+<p>결합구문은 여러 테이블의 레코드를 조합하여, 하나로 표현할 수 있게 해준다.<br />
+기본적으로 아래 네가지 결합을 규정한다.</p>
+
+<blockquote>
+  <p>INNER JOIN
+OUTER JOIN
+LEFT JOIN
+RIGHT JOIN</p>
+</blockquote>
+
+<h4 id="221-cross-join">2.2.1 CROSS JOIN</h4>
+
+<p>교차조인은 곱집합을 반환한다.<br />
+A 테이블의 각 행과 B 테이블의 각 행을 곱연산한 결과값을 반환한다.<br />
+따라서, 결과 테이블의 행은 (A행 수*B행 수)가 된다.</p>
+
+<h4 id="222-inner-join">2.2.2 INNER JOIN</h4>
+
+<p>내부조인은 가장 흔한 결합방식으로, A와 B테이블에 일치하는 결과를 가진 것만 반환한다.</p>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">A</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">B</span>
+<span class="k">ON</span> <span class="n">A</span><span class="p">.</span><span class="n">ID</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">ID</span><span class="p">;</span></code></pre>
+</figure>
+
+<p>A테이블의 ID와 B테이블의 ID가 일치하는 내용만 반환<br />
+(일치하지 않으면 제외된다)</p>
+
+<blockquote>
+  <p>테이블 1 INNER JOIN 테이블 2
+ON 일치조건(AND로 결합)
+<br /></p>
+</blockquote>
+
+<h4 id="223-outer-join">2.2.3 OUTER JOIN</h4>
+
+<p><strong>LEFT JOIN &amp; RIGHT JOIN</strong></p>
+
+<p>왼쪽/오른쪽 조인은 외부조인의 종류로서, 해당하는 방향의 테이블을 최소 1번씩은 출력한다.</p>
+
+<p><strong>FULL OUTER JOIN</strong></p>
+
+<p>완전 외부 조인은, 양측 테이블의 내용을 모두 최소 한번씩은 출력하게 하는 외부조인이다.<br />
+모든 결과값을 반환하는 방식.(CROSS JOIN과는 다르다)<br />
+일치하는 결과값이 없더라도, 해당 데이터는 NULL로 반환된다.<br />
+결과 테이블의 행은, (A행 수 + B행 수 - 겹치는갯수)가 된다.</p>
+
+<h4 id="224-group-by">2.2.4 GROUP BY</h4>
+
+<h5 id="having-조건문">HAVING 조건문</h5>
+
+<p>HAVING은 SUM, COUNT등과 결합하여 GROUP된 집합에서 필터링 조건을 추가한다.</p>
+
+<p><strong>DATEDIFF함수</strong></p>
+
+<h1 id="3-연관문서--참고자료">3. 연관문서 &amp; 참고자료</h1>
+<hr />
+
+<p><strong>연관포스팅</strong></p>
+
+<p><strong><a href="../SQL_0_Intro">0. SQL 개요</a></strong> <!-- **[1. MySQL 조작어](../MySQL_1_DML)**    --> <br />
+<strong><a href="../MySQL_2_Group_&amp;_Order">2. MySQL 정렬&amp;분류</a></strong></p>
+
+<p><strong>참고자료</strong></p>
+<ol>
+  <li><a href="https://www.postgresql.kr/docs/10/sql-keywords-appendix.html">PostgreSQL 키워드</a></li>
+  <li><a href="https://dev.mysql.com/doc/refman/8.0/en/keywords.html">MySQL 키워드</a></li>
+  <li><a href="https://docs.oracle.com/cd/A97630_01/appdev.920/a42525/apb.htm">Oracle 키워드</a></li>
+</ol>
+
+      <div class="toc">
+        <a href="#">&lt;맨 위로&gt;</a>
+      </div>
+      <div class="c-article__footer u-clearfix">
+        <div class="c-article__tag">
           
-        
-        
-        <div class="c-categories__container c-empty-figure">
-          <h2 class="c-categories__header">DevOps</h2>
-          <p class="c-categories__count"><span>1</span> Posts</p>
+          <a href="/tags#SQL Query">&#35; SQL Query</a>
+          
+          <a href="/tags#MySQL">&#35; MySQL</a>
+          
         </div>
-      </a>
-    </li>
-    
-    <li class="c-categories__item">
+        <div class="c-article__share">
+          <a href="https://twitter.com/intent/tweet?text=MySQL%20Data%20Manipulation%20Language&url=http://localhost:4000/MySQL_1_DML/" title="Share
+          on Twitter" rel="nofollow" target="_blank"><div data-icon='ei-sc-twitter' data-size='s'></div></a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/MySQL_1_DML/" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
+        </div>
+      </div>
+      <div class="c-newsletter">
+  <div class="c-newsletter__header">
+    <h4 class="c-newsletter__title">Newsletter</h4>
+    <div class="c-newsletter__subtitle">Subscribe to this blog and receive notifications of new posts by email.</div>
+  </div>
+  <form class="c-newsletter-form validate" action="#" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+    <div class="c-newsletter-form__group">
+      <label class="u-screen-reader-text" for="mce-EMAIL">Email address</label>
+      <input class="c-newsletter__email required email" id="mce-EMAIL" type="email" name="EMAIL" placeholder="Your email address" autocomplete="on">
+      <input class="c-newsletter__button" id="mc-embedded-subscribe" type="submit" name="subscribe" value="Subscribe">
+    </div>
+  </form>
+</div> <!-- /.c-newsletter -->
+      <div class="c-recent-post">
+        <h4 class="c-recent__title">You might also enjoy</h4>
+        <div class="c-recent__box">
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/MySQL_2_Group_&_Order/" style="background-image: url( /images/2023-08-17-MySQL_2_Group_&_Order/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/MySQL_2_Group_&_Order/">MySQL_2_정렬 & 그룹화하기</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-08-17T00:00:00+09:00">August 17, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/Jekyll_Blog_Renewal_Plan/" style="background-image: url( /images/2023-08-17-Jekyll_Blog_Renewal_Plan/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/Jekyll_Blog_Renewal_Plan/">Jekyll Blog Renewal Plan</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-08-17T00:00:00+09:00">August 17, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/Blog_Status/" style="background-image: url( /images/2023-07-05-Blog_Status/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/Blog_Status/">Blog 진행상황</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-07-05T00:00:00+09:00">July 5, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/JAVA_Advanced/" style="background-image: url( /images/2023-06-27-JAVA_Advanced/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/JAVA_Advanced/">JAVA Advanced</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-06-27T00:00:00+09:00">June 27, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        </div>
+      </div> <!-- /.c-recent-post -->
       
-      <a class="c-categories__link" href="/category/devlog/">
-        
-        
-        
-        <div class="c-categories__img">
-          <figure style="background-image: url('/images/2023-08-17-Jekyll_Blog_Renewal_Plan/banner.png');"></figure>
-          <span class="c-categories__more">View all</span>
-        </div>
-        
-        
-        <div class="c-categories__container ">
-          <h2 class="c-categories__header">Devlog</h2>
-          <p class="c-categories__count"><span>3</span> Posts</p>
-        </div>
-      </a>
-    </li>
-    
-  </ul>
-</div> <!-- ./c-categories -->
+        <div class="c-comments">
+  <div id="disqus_thread" class="article-comments"></div>
+  <script>
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = '//remerer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+</div> <!-- /.c-comments -->
+      
+    </div> <!-- /.c-wrap-content -->
+  </div> <!-- /.c-article__content -->
+</article> <!-- /.c-article-page -->
+
 </main> <!-- /.c-content -->
   </div> <!-- /.o-wrapper -->
   <div class="c-top" data-icon='ei-chevron-up' data-size='s' title="Scroll To Top"></div> <!-- /.c-top -->
