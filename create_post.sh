@@ -49,9 +49,9 @@ tags:
 categories:
 comments: true    #Disqus코멘트 허용여부
 ---
-# ${TITLE}
 
-<br>
+<br>  
+
 # 1. 개요
 ---
 개요본문   
