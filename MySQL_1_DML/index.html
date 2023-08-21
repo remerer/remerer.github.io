@@ -118,7 +118,7 @@
         </div>
       </header>
       <!-- 목차 -->
-      <ul class="c-inline-toc"><h5>목차</h5><li><a href="#mysql-조작어-data-manipulation-language">MySQL 조작어 (Data Manipulation Language)</a></li><li><a href="#1-mysql-조작어">1. MySQL 조작어</a><ul><li><a href="#21-select">2.1 SELECT</a><ul><li><a href="#211-where-조건문">2.1.1 WHERE (조건문)</a></li><li><a href="#212-order-by-정렬">2.1.2 ORDER BY (정렬)</a></li><li><a href="#213-limit-출력제한">2.1.3 LIMIT (출력제한)</a></li><li><a href="#214-as--distinct">2.1.4 AS &amp; DISTINCT</a></li><li><a href="#214-ifnull">2.1.4 IFNULL</a></li><li><a href="#215-date_format">2.1.5 DATE_FORMAT</a></li><li><a href="#22-join">2.2 JOIN</a><ul><li><a href="#221-cross-join">2.2.1 CROSS JOIN</a></li><li><a href="#222-inner-join">2.2.2 INNER JOIN</a></li><li><a href="#223-outer-join">2.2.3 OUTER JOIN</a></li><li><a href="#224-group-by">2.2.4 GROUP BY</a><ul><li><a href="#having-조건문">HAVING 조건문</a></li></ul></li></ul></li></ul></li></ul></li><li><a href="#3-연관문서--참고자료">3. 연관문서 &amp; 참고자료</a></li></ul>
+      <ul class="c-inline-toc"><h5>목차</h5><li><a href="#mysql-조작어-data-manipulation-language">MySQL 조작어 (Data Manipulation Language)</a></li><li><a href="#1-mysql-조작어">1. MySQL 조작어</a><ul><li><a href="#21-select">2.1 SELECT</a><ul><li><a href="#211-where-조건문">2.1.1 WHERE (조건문)</a></li><li><a href="#213-limit-출력제한">2.1.3 LIMIT (출력제한)</a></li><li><a href="#214-as--distinct">2.1.4 AS &amp; DISTINCT</a></li><li><a href="#214-ifnull">2.1.4 IFNULL</a></li><li><a href="#215-date_format">2.1.5 DATE_FORMAT</a></li><li><a href="#22-join">2.2 JOIN</a><ul><li><a href="#221-cross-join">2.2.1 CROSS JOIN</a></li><li><a href="#222-inner-join">2.2.2 INNER JOIN</a></li><li><a href="#223-outer-join">2.2.3 OUTER JOIN</a><ul><li><a href="#having-조건문">HAVING 조건문</a></li></ul></li></ul></li></ul></li></ul></li><li><a href="#3-연관문서--참고자료">3. 연관문서 &amp; 참고자료</a></li></ul>
 
       <!-- 내용 -->
       <h1 id="mysql-조작어-data-manipulation-language">MySQL 조작어 (Data Manipulation Language)</h1>
@@ -182,21 +182,6 @@ OR 로 연결한다고 해서 여러가지 문자열을 검색하지 않는다. 
 
 <p><strong>REGEXP_LIKE (정규화 비교)</strong> <br />
 정규화를 통해 특정 키워드가 포함되었는지 파악 가능하다.</p>
-
-<h3 id="212-order-by-정렬">2.1.2 ORDER BY (정렬)</h3>
-
-<p>정렬기준을 선택할 수 있다.
-<strong>ASC</strong>(순차정렬)과 <strong>DESC</strong>(역정렬)로 정렬할 수 있으며,<br />
-정렬조건이 여러개라면 뒤의것부터 정렬한 뒤에 앞에것을 정렬한다.
-다중정렬의 구분은 <code class="language-plaintext highlighter-rouge">,(콤마)</code>로 한다.</p>
-
-<figure class="highlight">
-  <pre><code class="language-sql" data-lang="sql"><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">ANIMAL_ID</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="nb">DATETIME</span>  
-<span class="o">&gt;</span> <span class="k">FROM</span> <span class="n">ANIMAL_INS</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">NAME</span> <span class="k">ASC</span><span class="p">,</span> <span class="nb">DATETIME</span> <span class="k">DESC</span></code></pre>
-</figure>
-
-<p>해당코드는 데이터를 DATETIME기준으로 정렬후에, 이름으로 정렬한다.<br />
-(최종적으로는 이름으로 순차정렬. 이름이 같은 경우에만 날짜로 역정렬)</p>
 
 <h3 id="213-limit-출력제한">2.1.3 LIMIT (출력제한)</h3>
 
@@ -299,8 +284,6 @@ ON 일치조건(AND로 결합)
 일치하는 결과값이 없더라도, 해당 데이터는 NULL로 반환된다.<br />
 결과 테이블의 행은, (A행 수 + B행 수 - 겹치는갯수)가 된다.</p>
 
-<h4 id="224-group-by">2.2.4 GROUP BY</h4>
-
 <h5 id="having-조건문">HAVING 조건문</h5>
 
 <p>HAVING은 SUM, COUNT등과 결합하여 GROUP된 집합에서 필터링 조건을 추가한다.</p>
@@ -339,19 +322,7 @@ ON 일치조건(AND로 결합)
           <a href="https://facebook.com/sharer.php?u=http://localhost:4000/MySQL_1_DML/" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
         </div>
       </div>
-      <div class="c-newsletter">
-  <div class="c-newsletter__header">
-    <h4 class="c-newsletter__title">Newsletter</h4>
-    <div class="c-newsletter__subtitle">Subscribe to this blog and receive notifications of new posts by email.</div>
-  </div>
-  <form class="c-newsletter-form validate" action="#" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-    <div class="c-newsletter-form__group">
-      <label class="u-screen-reader-text" for="mce-EMAIL">Email address</label>
-      <input class="c-newsletter__email required email" id="mce-EMAIL" type="email" name="EMAIL" placeholder="Your email address" autocomplete="on">
-      <input class="c-newsletter__button" id="mc-embedded-subscribe" type="submit" name="subscribe" value="Subscribe">
-    </div>
-  </form>
-</div> <!-- /.c-newsletter -->
+      
       <div class="c-recent-post">
         <h4 class="c-recent__title">You might also enjoy</h4>
         <div class="c-recent__box">

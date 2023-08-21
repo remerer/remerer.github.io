@@ -211,10 +211,13 @@
 <hr />
 
 <p>SQL쿼리로 도출된 결과를 조건에 따라 정렬할 수 있다. <br />
-여러번 정렬 시 <code class="language-plaintext highlighter-rouge">,</code>로 각 조건을 연결하고, 앞에서 부터 순차적으로 정렬된다. (뒤의 조건으로 정렬되고, 같은조건일 때 앞의 조건으로 정렬)</p>
+여러번 정렬 시 <code class="language-plaintext highlighter-rouge">,</code>로 각 조건을 연결하고, 뒤에서 부터 순차적으로 정렬된다. <br />
+(앞의 조건으로 정렬하되, 같은조건일 때 뒤의 조건으로 정렬)</p>
 
 <blockquote>
-  <p><strong>ORDER BY</strong> <em>컬럼명</em> <strong>ON</strong> <em>조건</em> <strong>[ASC or DESC]</strong></p>
+  <p><strong>ORDER BY</strong> <em>컬럼명</em> <strong>ON</strong> <em>조건1</em> <strong>[ASC or DESC]</strong> , <em>조건2</em>… <br />
+<img src="/images/2023-08-17-MySQL_2_Group_&amp;_Order/banner.png/../arrow.png" alt="" width="400px" align="middle" height="50px" /> <strong>조건 적용방향</strong></p>
+
 </blockquote>
 
 <p>오름차순(ASC)은 생략가능, DESC를 추가해 내림차순으로 정렬가능 <br />
@@ -265,7 +268,7 @@
 <figure class="highlight">
   <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span> 
 <span class="k">FROM</span> <span class="n">GOODS_DB</span> <span class="n">GD</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">GD</span><span class="p">.</span><span class="n">PRICE</span><span class="p">,</span> <span class="n">GD</span><span class="p">.</span><span class="k">COUNT</span> <span class="k">DESC</span></code></pre>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">GD</span><span class="p">.</span><span class="k">COUNT</span> <span class="k">DESC</span><span class="p">,</span> <span class="n">GD</span><span class="p">.</span><span class="n">PRICE</span> </code></pre>
 </figure>
 
 <p>해당 쿼리문을 작성하면, 아래의 결과를 도출한다.</p>
@@ -273,46 +276,47 @@
 <table>
   <thead>
     <tr>
-      <th>NAME</th>
-      <th>PRICE</th>
-      <th>COUNT</th>
+      <th style="text-align: center">NAME</th>
+      <th style="text-align: center">PRICE</th>
+      <th style="text-align: center">COUNT</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>PAPER</td>
-      <td>200</td>
-      <td>150</td>
+      <td style="text-align: center">PAPER</td>
+      <td style="text-align: center">200</td>
+      <td style="text-align: center">150</td>
     </tr>
     <tr>
-      <td>PEN</td>
-      <td>500</td>
-      <td>150</td>
+      <td style="text-align: center">PEN</td>
+      <td style="text-align: center">500</td>
+      <td style="text-align: center">150</td>
     </tr>
     <tr>
-      <td>GLUE</td>
-      <td>500</td>
-      <td>100</td>
+      <td style="text-align: center">GLUE</td>
+      <td style="text-align: center">500</td>
+      <td style="text-align: center">100</td>
     </tr>
     <tr>
-      <td>RULER</td>
-      <td>700</td>
-      <td>20</td>
+      <td style="text-align: center">RULER</td>
+      <td style="text-align: center">700</td>
+      <td style="text-align: center">20</td>
     </tr>
     <tr>
-      <td>ERASER</td>
-      <td>300</td>
-      <td>30</td>
+      <td style="text-align: center">ERASER</td>
+      <td style="text-align: center">300</td>
+      <td style="text-align: center">30</td>
     </tr>
     <tr>
-      <td>MAGNET</td>
-      <td>700</td>
-      <td>30</td>
+      <td style="text-align: center">MAGNET</td>
+      <td style="text-align: center">700</td>
+      <td style="text-align: center">30</td>
     </tr>
   </tbody>
 </table>
 
-<p>COUNT기준으로 내림차순 정렬하지만, 같은조건일때는 먼저 정렬했던, PRICE기준으로 정렬(오름차순)된다.</p>
+<p>가장 좌측의 조건인 COUNT기준으로 내림차순 정렬하지만, <br />
+같은조건일때는 먼저 정렬했던, PRICE기준으로 정렬(오름차순)된다.</p>
 
 <h1 id="3-연관포스팅">3. 연관포스팅</h1>
 <hr />
@@ -340,19 +344,7 @@
           <a href="https://facebook.com/sharer.php?u=http://localhost:4000/MySQL_2_Group_&_Order/" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
         </div>
       </div>
-      <div class="c-newsletter">
-  <div class="c-newsletter__header">
-    <h4 class="c-newsletter__title">Newsletter</h4>
-    <div class="c-newsletter__subtitle">Subscribe to this blog and receive notifications of new posts by email.</div>
-  </div>
-  <form class="c-newsletter-form validate" action="#" method="POST" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-    <div class="c-newsletter-form__group">
-      <label class="u-screen-reader-text" for="mce-EMAIL">Email address</label>
-      <input class="c-newsletter__email required email" id="mce-EMAIL" type="email" name="EMAIL" placeholder="Your email address" autocomplete="on">
-      <input class="c-newsletter__button" id="mc-embedded-subscribe" type="submit" name="subscribe" value="Subscribe">
-    </div>
-  </form>
-</div> <!-- /.c-newsletter -->
+      
       <div class="c-recent-post">
         <h4 class="c-recent__title">You might also enjoy</h4>
         <div class="c-recent__box">
