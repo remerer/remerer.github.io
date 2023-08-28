@@ -118,7 +118,7 @@
         </div>
       </header>
       <!-- 목차 -->
-      <ul class="c-inline-toc"><h5>목차</h5><li><a href="#1-개요">1. 개요</a></li><li><a href="#2-내용">2. 내용</a><ul><li><a href="#21-내용하위제목">2.1 내용하위제목</a></li></ul></li></ul>
+      <ul class="c-inline-toc"><h5>목차</h5><li><a href="#1-개요">1. 개요</a></li><li><a href="#2-string관련-절">2. String관련 절</a><ul><li><a href="#21-concat">2.1 CONCAT</a></li><li><a href="#22-left--right">2.2 LEFT &amp; RIGHT</a></li></ul></li><li><a href="#3-date관련-절">3. Date관련 절</a><ul><li><a href="#31-year-month-date">3.1 YEAR, MONTH, DATE</a></li><li><a href="#32-hour-minute-second">3.2 HOUR, MINUTE, SECOND</a></li><li><a href="#33-date_format">3.3 DATE_FORMAT</a></li></ul></li></ul>
 
       <!-- 내용 -->
       <p><br /></p>
@@ -126,16 +126,39 @@
 <h1 id="1-개요">1. 개요</h1>
 <hr />
 
-<p>개요본문</p>
+<p>본문에서는 MySQL에서 String 및 Date타입의 데이터를 다루기 위한 키워드를 정리하였다.</p>
 
 <p><br /></p>
 
-<h1 id="2-내용">2. 내용</h1>
+<h1 id="2-string관련-절">2. String관련 절</h1>
 <hr />
 
-<h2 id="21-내용하위제목">2.1 내용하위제목</h2>
-<p>내용본문</p>
+<p>String데이터는 기본적으로 쌍따옴표,따옴표<code class="language-plaintext highlighter-rouge">" or '</code>를 이용하여 묶어준다.</p>
 
+<h2 id="21-concat">2.1 CONCAT</h2>
+<p>String데이터들을 합치는 키워드</p>
+
+<blockquote>
+  <p><strong>CONCAT (</strong> <em>데이터1</em>, <em>데이터2</em> <strong>)</strong></p>
+</blockquote>
+
+<p>기본적으로 <code class="language-plaintext highlighter-rouge">+</code>연산자로, String데이터 간 결합이 가능하지만, <br />
+다른 자료형(Date, Int…)과 결합할 경우 오류가 발생할 수 있다.</p>
+
+<h2 id="22-left--right">2.2 LEFT &amp; RIGHT</h2>
+
+<h1 id="3-date관련-절">3. Date관련 절</h1>
+<hr />
+
+<h2 id="31-year-month-date">3.1 YEAR, MONTH, DATE</h2>
+
+<h2 id="32-hour-minute-second">3.2 HOUR, MINUTE, SECOND</h2>
+
+<h2 id="33-date_format">3.3 DATE_FORMAT</h2>
+
+<p>DATE_FORMAT(입력값, 출력형식 or 출력 TEXT)
+출력형식은 “%Y-%M-%D”, “%y/%m/%d”, “%y년 %m월 %d일” 등으로 표기할 수 있다.<br />
+해당 출력형식은 대소문자를 구분한다.</p>
 
       <div class="toc">
         <a href="#">&lt;맨 위로&gt;</a>
@@ -157,9 +180,9 @@
         
         
           <div class="c-recent__item">
-            <a class="c-recent__image" href="/MySQL_3_Subquery/" style="background-image: url( /images/2023-08-23-MySQL_3_Subquery/banner.png)"></a>
+            <a class="c-recent__image" href="/MySQL_4/" style="background-image: url( /images/2023-08-23-MySQL_4/banner.png)"></a>
             <div class="c-recent__footer">
-              <h4><a href="/MySQL_3_Subquery/">Mysql_3_subquery</a></h4>
+              <h4><a href="/MySQL_4/">MySQL 서브쿼리</a></h4>
               <div class="c-recent__date">
                 <time datetime="2023-08-23T00:00:00+09:00">August 23, 2023</time>
               </div>

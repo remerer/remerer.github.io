@@ -114,11 +114,11 @@
         <h1 class="c-article__title">Jekyll Post Create Script</h1>
         <div class="c-article__date">
           <span>Date Created : 2023, Jun 05<br>
-                Date Modified : 2023, Jul 19</span>  
+                Date Modified : 2023, Aug 28</span>  
         </div>
       </header>
       <!-- 목차 -->
-      <ul class="c-inline-toc"><h5>목차</h5><li><a href="#script로-jekyll-포스팅-폼-만들기">Script로 Jekyll 포스팅 폼 만들기</a></li><li><a href="#1-개요">1. 개요</a></li><li><a href="#2-내용">2. 내용</a><ul><li><a href="#211-shellscript-codesh">2.1.1 ShellScript Code(.sh)</a></li><li><a href="#powershall-script-codeps1">2.1.2 PowerShall Script Code(.ps1)</a></li><li><a href="#section">2.2 <strong>작업내용</strong></a></li></ul></li><li><a href="#section-1">3. <strong>기타문서</strong></a><ul><li><a href="#reference">3.1 Reference</a></li></ul></li></ul>
+      <ul class="c-inline-toc"><h5>목차</h5><li><a href="#script로-jekyll-포스팅-폼-만들기">Script로 Jekyll 포스팅 폼 만들기</a></li><li><a href="#1-개요">1. 개요</a></li><li><a href="#2-내용">2. 내용</a><ul><li><a href="#211-shellscript-codesh">2.1.1 ShellScript Code(.sh)</a></li><li><a href="#section">2.2 <strong>작업내용</strong></a></li></ul></li><li><a href="#section-1">3. <strong>기타문서</strong></a><ul><li><a href="#reference">3.1 Reference</a></li></ul></li></ul>
 
       <!-- 내용 -->
       <h1 id="script로-jekyll-포스팅-폼-만들기">Script로 Jekyll 포스팅 폼 만들기</h1>
@@ -162,47 +162,52 @@
 
     <p><span class="c"># Post title</span>
 <span class="c"># Trim leading spaces</span>
-<span class="nb">read</span> <span class="nt">-rp</span> <span class="s2">”</span><span class="k">${</span><span class="nv">bold</span><span class="k">}</span><span class="s2">Title:</span><span class="k">${</span><span class="nv">normal</span><span class="k">}</span><span class="s2"> “</span> <span class="nt">-a</span> TITLE
+<span class="nb">read</span> <span class="nt">-e</span> <span class="nt">-rp</span> <span class="s2">”</span><span class="k">${</span><span class="nv">bold</span><span class="k">}</span><span class="s2">FileName:</span><span class="k">${</span><span class="nv">normal</span><span class="k">}</span><span class="s2"> “</span> <span class="nt">-a</span> FILENAME
+<span class="nv">FILENAME</span><span class="o">=</span><span class="s2">”</span><span class="si">$(</span><span class="nb">echo</span> <span class="s2">”</span><span class="k">${</span><span class="nv">FILENAME</span><span class="p">[@]</span><span class="k">}</span><span class="s2">”</span> | <span class="nb">sed</span> <span class="nt">-e</span> <span class="s1">’s/^[ \t]*//’</span><span class="si">)</span><span class="s2">”</span></p>
+
+    <p><span class="nb">read</span> <span class="nt">-e</span> <span class="nt">-rp</span> <span class="s2">”</span><span class="k">${</span><span class="nv">bold</span><span class="k">}</span><span class="s2">Title:</span><span class="k">${</span><span class="nv">normal</span><span class="k">}</span><span class="s2"> “</span> <span class="nt">-a</span> TITLE
 <span class="nv">TITLE</span><span class="o">=</span><span class="s2">”</span><span class="si">$(</span><span class="nb">echo</span> <span class="s2">”</span><span class="k">${</span><span class="nv">TITLE</span><span class="p">[@]</span><span class="k">}</span><span class="s2">”</span> | <span class="nb">sed</span> <span class="nt">-e</span> <span class="s1">’s/^[ \t]*//’</span><span class="si">)</span><span class="s2">”</span></p>
 
     <p><span class="c"># Date</span>
-<span class="nv">DATE</span><span class="o">=</span><span class="si">$(</span><span class="nb">date</span> +%Y-%m-%d<span class="si">)</span></p>
+<span class="nb">read</span> <span class="nt">-rp</span> <span class="s2">”</span><span class="k">${</span><span class="nv">bold</span><span class="k">}</span><span class="s2">Date</span><span class="k">${</span><span class="nv">normal</span><span class="k">}</span><span class="s2">(NULL==today): “</span> <span class="nt">-a</span> DATE
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">”</span><span class="k">${</span><span class="nv">DATE</span><span class="p">[*]</span><span class="k">}</span><span class="s2">”</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nv">DATE</span><span class="o">=</span><span class="si">$(</span><span class="nb">date</span> +%Y-%m-%d<span class="si">)</span>
+<span class="k">fi</span></p>
 
     <p><span class="c"># Post extension</span>
 <span class="nv">EXT</span><span class="o">=</span><span class="s1">‘.md’</span></p>
 
-    <p><span class="c"># File name</span>
-<span class="c"># read -p “${bold}Filename:${normal} “ FILENAME</span></p>
-
     <p><span class="c"># File name should be lowercase</span>
-<span class="nv">FILENAME</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="s2">”</span><span class="nv">$TITLE</span><span class="s2">”</span> | <span class="nb">tr</span> <span class="s1">’[:upper:]’</span> <span class="s1">’[:lower:]’</span> | <span class="nb">tr</span> <span class="s1">’ ‘</span> <span class="s1">‘_’</span><span class="si">)</span>
+<span class="nv">FILENAME</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="s2">”</span><span class="nv">$FILENAME</span><span class="s2">”</span> | <span class="nb">tr</span> <span class="s1">’ ‘</span> <span class="s1">‘_’</span><span class="si">)</span>
+<span class="nv">DIRNAME</span><span class="o">=</span><span class="k">${</span><span class="nv">DATE</span><span class="k">}</span>-<span class="k">${</span><span class="nv">FILENAME</span><span class="k">}</span>
 <span class="nv">FILENAME</span><span class="o">=</span><span class="k">${</span><span class="nv">DATE</span><span class="k">}</span>-<span class="k">${</span><span class="nv">FILENAME</span><span class="k">}${</span><span class="nv">EXT</span><span class="k">}</span></p>
 
-    <p><span class="c"># Go to _posts and create a file</span>
+    <p><span class="nb">mkdir</span> <span class="nt">-p</span> ./images/<span class="k">${</span><span class="nv">DIRNAME</span><span class="k">}</span>
+<span class="c"># Go to _posts and create a file</span>
 <span class="nb">cd</span> <span class="k">${</span><span class="nv">POSTS_DIR</span><span class="k">}</span>
 <span class="nb">touch</span> <span class="k">${</span><span class="nv">FILENAME</span><span class="k">}</span></p>
 
     <p><span class="c"># Add YAML front matter and excerpt space</span>
-<span class="c"># (해당부분은 각자의 Jekyll 테마에 맞추어 변경이 필요하다.)</span>
+<span class="c"># (해당부분은 각자의 Jekyll 테마에 맞추어 변경이 필요하다)</span>
 <span class="nb">tee</span> <span class="nt">-a</span> <span class="nv">$FILENAME</span> <span class="o">&gt;</span>/dev/null <span class="o">&lt;&lt;</span><span class="no">END</span><span class="sh"> <br />
 —
 layout: post
 title: </span><span class="k">${</span><span class="nv">TITLE</span><span class="k">}</span><span class="sh">
-image: </span><span class="k">${</span><span class="nv">DATE</span><span class="k">}</span><span class="sh">
+image: </span><span class="k">${</span><span class="nv">DIRNAME</span><span class="k">}</span><span class="sh">/banner.png
 date: </span><span class="k">${</span><span class="nv">DATE</span><span class="k">}</span><span class="sh">
 tags: 
 categories:
+comments: true    #Disqus코멘트 허용여부
 —</span></p>
-    <h1 id="spantitle">&lt;/span&gt;<span class="k">${</span><span class="nv">TITLE</span><span class="k">}</span><span class="sh"></span></h1>
-
-    <p>![문서제목에 맞는 사진](&lt;/span&gt;<span class="k">${</span><span class="nv">DATE</span><span class="k">}</span><span class="sh">)</span></p>
 
     <p>&lt;br&gt;</p>
+
     <h1 id="section">1. 개요</h1>
     <hr />
     <p>개요본문</p>
 
     <p>&lt;br&gt;</p>
+
     <h1 id="section-1">2. 내용</h1>
     <hr />
     <h2 id="section-2">2.1 내용하위제목</h2>
@@ -216,98 +221,18 @@ END</span></p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;/div&gt;
 &lt;p&gt;&amp;lt;/details&amp;gt; &lt;br /&gt;&lt;/p&gt;
-&lt;h2 id="powershall-script-codeps1"&gt;2.1.2 PowerShall Script Code(.ps1)&lt;/h2&gt;
-&lt;!-- 코드시작 --&gt;
-&lt;details&gt;
-  &lt;summary&gt;
-    &lt;p&gt;PowerShall 코드접기/펼치기&amp;lt;/summary&amp;gt;&lt;/p&gt;
-    &lt;div&gt;
 
-      &lt;figure class="highlight"&gt;
-        &lt;pre&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span class="c"&gt;# Colors and styles&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$Green&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;System.ConsoleColor&lt;/span&gt;&lt;span class="p"&gt;]::&lt;/span&gt;&lt;span class="n"&gt;Green&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$Blue&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;System.ConsoleColor&lt;/span&gt;&lt;span class="p"&gt;]::&lt;/span&gt;&lt;span class="n"&gt;Blue&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$White&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;System.ConsoleColor&lt;/span&gt;&lt;span class="p"&gt;]::&lt;/span&gt;&lt;span class="n"&gt;White&lt;/span&gt;&lt;span class="w"&gt;
-</code></pre></div>    </div>
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id="section"&gt;2.2 &lt;strong&gt;작업내용&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;기존의 코드를 그대로 쓸수가 없었기 때문에 YMAL Front Matter와 본문의 구성을 테마에 맞추어 변경해주었다. &lt;br /&gt; 또한, Title을 입력받아 그대로 파일이름으로 적용하도록 하였으며, &lt;br /&gt; BackSpace와 Space를 입력받았을 때 제대로 작동하지 않는 문제를 해결하였다. (정규화 &amp;amp; readline)&lt;/p&gt;
 
-    <p>&lt;/span&gt;<span class="n">Write-Host</span><span class="w"> </span><span class="s2">”</span><span class="se">`n</span><span class="s2">Script to create new Jekyll posts easily.”</span><span class="w"> </span><span class="nt">-ForegroundColor</span><span class="w"> </span><span class="nv">$Blue</span><span class="w"></span></p>
+&lt;p&gt;한계점 : Sh에서는 기본적으로 정규화가 쉽지만, 한글을 입력받게되면 정규화가 어렵다. &lt;br /&gt; 화살표키를 처리하지 못하는 문제가 있다. -&amp;gt; 해당문제는 readline을 적용함으로써 해결&lt;/p&gt;
 
-    <p>&lt;/span&gt;<span class="c"># The post directory</span><span class="w">
-</span><span class="nv">$POSTS_DIR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">’./_posts/’</span><span class="w"></span></p>
-
-    <p>&lt;/span&gt;<span class="c"># Post title</span><span class="w">
-</span><span class="nv">$title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Read-Host</span><span class="w"> </span><span class="nt">-Prompt</span><span class="w"> </span><span class="s1">‘Title’</span><span class="w"></span></p>
-
-    <p>&lt;/span&gt;<span class="c"># Post date</span><span class="w">
-</span><span class="nv">$date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Read-Host</span><span class="w"> </span><span class="nt">-Prompt</span><span class="w"> </span><span class="s1">‘Date (null = Today)’</span><span class="w"></span></p>
-
-    <p>&lt;/span&gt;<span class="c"># Trim leading spaces</span><span class="w">
-</span><span class="nv">$title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$title</span><span class="o">.</span><span class="nf">TrimStart</span><span class="p">()</span><span class="w"></span></p>
-
-    <p>&lt;/span&gt;<span class="c"># Date</span><span class="w">
-</span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="o">-not</span><span class="w"> </span><span class="nv">$date</span><span class="p">){</span><span class="w">
-    </span><span class="nv">$date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-Date</span><span class="w"> </span><span class="nt">-Format</span><span class="w"> </span><span class="s2">“yyyy-MM-dd”</span><span class="w">
-</span><span class="p">}</span><span class="w"></span></p>
-
-    <p>&lt;/span&gt;<span class="c"># Post extension</span><span class="w">
-</span><span class="nv">$EXT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">‘.md’</span><span class="w"></span></p>
-
-    <p>&lt;/span&gt;<span class="c"># File name should be lowercase</span><span class="w">
-</span><span class="nv">$filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$title</span><span class="o">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s2">” “</span><span class="p">,</span><span class="w"> </span><span class="s2">“_”</span><span class="p">)</span><span class="w">
-</span><span class="nv">$filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">”</span><span class="nv">${date}</span><span class="s2">-</span><span class="nv">${filename}${EXT}</span><span class="s2">”</span><span class="w"></span></p>
-
-    <p>&lt;/span&gt;<span class="c"># Go to _posts and create a file</span><span class="w">
-</span><span class="n">Set-Location</span><span class="w"> </span><span class="nv">$POSTS_DIR</span><span class="w">
-</span><span class="n">New-Item</span><span class="w"> </span><span class="nv">$filename</span><span class="w"> </span><span class="nt">-ItemType</span><span class="w"> </span><span class="nx">File</span><span class="w"></span></p>
-
-    <p>&lt;/span&gt;<span class="c"># Add YAML front matter and excerpt space</span><span class="w">
-</span><span class="c"># (해당부분은 각자의 Jekyll 테마에 맞추어 변경이 필요하다.)</span><span class="w">
-</span><span class="nv">$yaml</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sh">@”
-—
-layout: post
-title: </span><span class="nv">${title}</span><span class="sh">
-image: </span><span class="nv">${date}</span><span class="sh">
-date: </span><span class="nv">${date}</span><span class="sh">
-tags: 
-categories:
-—</span></p>
-    <h1 id="spantitle-1">&lt;/span&gt;<span class="nv">$title</span><span class="sh"></span></h1>
-
-    <p>![picture](&lt;/span&gt;<span class="nv">${date}</span><span class="sh">)</span></p>
-
-    <p>&lt;br&gt;</p>
-    <h1 id="abstract">1. Abstract</h1>
-    <hr />
-    <p>Summary</p>
-
-    <p>&lt;br&gt;</p>
-    <h1 id="heading">2. Heading</h1>
-    <hr />
-    <h2 id="sub-heading">2.1 Sub Heading</h2>
-    <p>Main Contents</p>
-
-    <p>”@&lt;/span&gt;<span class="w"></span></p>
-
-    <p>&lt;/span&gt;<span class="nv">$yaml</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Out-File</span><span class="w"> </span><span class="nt">-FilePath</span><span class="w"> </span><span class="nv">$filename</span><span class="w"> </span><span class="nt">-Encoding</span><span class="w"> </span><span class="nx">utf8</span><span class="w"></span></p>
-
-    <p>&lt;/span&gt;<span class="n">Write-Host</span><span class="w"> </span><span class="s2">“File was successfully created!”</span><span class="w"> </span><span class="nt">-ForegroundColor</span><span class="w"> </span><span class="nv">$Green</span><span class="w">
-</span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">“❯ </span><span class="nv">${POSTS_DIR}${filename}</span><span class="s2">”</span><span class="w"> </span><span class="nt">-ForegroundColor</span><span class="w"> </span><span class="nv">$White</span><span class="w">
-</span><span class="n">Set-Location</span><span class="w"> </span><span class="o">..</span>&lt;/code&gt;&lt;/pre&gt;
-          &lt;/figure&gt;</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;/div&gt;
-    &lt;p&gt;&amp;lt;/details&amp;gt; &lt;br /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-    &lt;h2 id="section"&gt;2.2 &lt;strong&gt;작업내용&lt;/strong&gt;&lt;/h2&gt;
-    &lt;p&gt;기존의 코드를 그대로 쓸수가 없었기 때문에 YMAL Front Matter와 본문의 구성을 테마에 맞추어 변경해주었다. &lt;br /&gt; 또한, Title을 입력받아 그대로 파일이름으로 적용하도록 하였으며, &lt;br /&gt; BackSpace와 Space를 입력받았을 때 제대로 작동하지 않는 문제를 해결하였다. (정규화)&lt;/p&gt;
-
-    &lt;p&gt;한계점 : Sh에서는 기본적으로 정규화가 쉽지만, 한글을 입력받게되면 정규화가 어렵다. &lt;br /&gt; 화살표키를 처리하지 못하는 문제가 있다.&lt;/p&gt;
-
-    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-    &lt;h1 id="section-1"&gt;3. &lt;strong&gt;기타문서&lt;/strong&gt;&lt;/h1&gt;
-    &lt;hr /&gt;
-    &lt;h2 id="reference"&gt;3.1 Reference&lt;/h2&gt;
-    &lt;p&gt;해당내용 중 ShallScript는 &lt;a href="https://otzslayer.github.io/%EA%B8%B0%ED%83%80/2021/11/15/jekyll-post-generator-script.html"&gt;Jay님의 블로그&lt;/a&gt;의 코드를 베이스코드로 수정하였다.&lt;/p&gt;
-  &lt;/summary&gt;
-&lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id="section-1"&gt;3. &lt;strong&gt;기타문서&lt;/strong&gt;&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h2 id="reference"&gt;3.1 Reference&lt;/h2&gt;
+&lt;p&gt;해당내용 중 ShallScript는 &lt;a href="https://otzslayer.github.io/%EA%B8%B0%ED%83%80/2021/11/15/jekyll-post-generator-script.html"&gt;Jay님의 블로그&lt;/a&gt;의 코드를 베이스코드로 수정하였다.&lt;/p&gt;
 </code></pre></div>    </div>
   </summary>
 </details>
@@ -350,9 +275,9 @@ categories:
         
         
           <div class="c-recent__item">
-            <a class="c-recent__image" href="/MySQL_3_Subquery/" style="background-image: url( /images/2023-08-23-MySQL_3_Subquery/banner.png)"></a>
+            <a class="c-recent__image" href="/MySQL_4/" style="background-image: url( /images/2023-08-23-MySQL_4/banner.png)"></a>
             <div class="c-recent__footer">
-              <h4><a href="/MySQL_3_Subquery/">Mysql_3_subquery</a></h4>
+              <h4><a href="/MySQL_4/">MySQL 서브쿼리</a></h4>
               <div class="c-recent__date">
                 <time datetime="2023-08-23T00:00:00+09:00">August 23, 2023</time>
               </div>

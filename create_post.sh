@@ -14,10 +14,10 @@ POSTS_DIR='./_posts/'
 
 # Post title
 # Trim leading spaces
-read -rp "${bold}FileName:${normal} " -a FILENAME
+read -e -rp "${bold}FileName:${normal} " -a FILENAME
 FILENAME="$(echo "${FILENAME[@]}" | sed -e 's/^[ \t]*//')"
 
-read -rp "${bold}Title:${normal} " -a TITLE
+read -e -rp "${bold}Title:${normal} " -a TITLE
 TITLE="$(echo "${TITLE[@]}" | sed -e 's/^[ \t]*//')"
 
 
