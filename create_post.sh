@@ -14,8 +14,12 @@ POSTS_DIR='./_posts/'
 
 # Post title
 # Trim leading spaces
+read -rp "${bold}FileName:${normal} " -a FILENAME
+FILENAME="$(echo "${FILENAME[@]}" | sed -e 's/^[ \t]*//')"
+
 read -rp "${bold}Title:${normal} " -a TITLE
 TITLE="$(echo "${TITLE[@]}" | sed -e 's/^[ \t]*//')"
+
 
 # Date
 read -rp "${bold}Date${normal}(NULL==today): " -a DATE
@@ -27,7 +31,7 @@ fi
 EXT='.md'
 
 # File name should be lowercase
-FILENAME=$(echo "$TITLE" | tr ' ' '_')
+FILENAME=$(echo "$FILENAME" | tr ' ' '_')
 DIRNAME=${DATE}-${FILENAME}
 FILENAME=${DATE}-${FILENAME}${EXT}
 

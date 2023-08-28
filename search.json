@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "MySQL String &amp; Date 조작",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/MySQL_3/",
+      "date"     : "2023-08-28 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "Mysql_3_subquery",
       "category" : "",
       "tags"     : "SQL Query and MySQL",
@@ -41,7 +49,7 @@
     } ,
   
     {
-      "title"    : "MySQL Data Manipulation Language",
+      "title"    : "MySQL 조작어 (Data Manipulation Language)",
       "category" : "",
       "tags"     : "SQL Query and MySQL",
       "url"      : "/MySQL_1_DML/",
