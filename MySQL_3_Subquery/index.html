@@ -5,9 +5,9 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <title>Page not found</title>
-  <meta name='description' content="Flexton is a responsive and ultra-minimal theme for Jekyll.">
-  <link rel='canonical' href="http://localhost:4000/404.html">
+  <title>Mysql_3_subquery</title>
+  <meta name='description' content="">
+  <link rel='canonical' href="http://localhost:4000/MySQL_3_Subquery/">
   <link rel='alternate' type='application/rss+xml' title='Remer's Devlog' href="http://localhost:4000/feed.xml">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
@@ -92,38 +92,160 @@
 </aside> <!-- /.c-sidebar -->
 
 <main class="c-content">
-  <style media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <header class="c-header u-hide u-no-margin-bottom">
-    <div class="c-header__box">
-      <div class="c-search u-full-width">
-        <div class="c-search__box">
-          <label for="js-search-input" class="u-screen-reader-text">Search for Blog</label>
-          <input type="text" id="js-search-input" class="c-search__text" autocomplete="off" placeholder="Type to search...">
-          <div data-icon='ei-search' data-size='s'></div>
+  <article class="c-article">
+  <div class="c-article__content" style="padding: 0 20px; margin: 0 30px;">
+    <header class="c-header u-hide u-no-margin-top">
+      <div class="c-header__box">
+        <div class="c-search u-full-width">
+          <div class="c-search__box">
+            <label for="js-search-input" class="u-screen-reader-text">Search for Blog</label>
+            <input type="text" id="js-search-input" class="c-search__text" autocomplete="off" placeholder="Type to search...">
+            <div data-icon='ei-search' data-size='s'></div>
+          </div>
+          <ul id="js-results-container" class="c-search-results-list"></ul>
         </div>
-        <ul id="js-results-container" class="c-search-results-list"></ul>
       </div>
-    </div>
-  </header>
-  <h1>404</h1>
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-  <p><a href="/">Back to the bLog</a></p>
-</div>
+    </header>
+    
+    <div class="c-article__image o-opacity" style="background-image: url( /images/2023-08-23-MySQL_3_Subquery/banner.png )"></div>
+    
+    <div class="c-wrap-content" style="max-width: 1000px; margin: 0 auto;">
+      <header class="c-article__header">
+        <h1 class="c-article__title">Mysql_3_subquery</h1>
+        <div class="c-article__date">
+          <span>Date Created : 2023, Aug 23<br>
+                Date Modified : 2023, Aug 25</span>  
+        </div>
+      </header>
+      <!-- 목차 -->
+      <ul class="c-inline-toc"><h5>목차</h5><li><a href="#1-개요">1. 개요</a></li><li><a href="#2-subquery의-특징">2. Subquery의 특징</a><ul><li><a href="#21-subquery-만들기">2.1 Subquery 만들기</a></li></ul></li></ul>
+
+      <!-- 내용 -->
+      <p><br /></p>
+
+<h1 id="1-개요">1. 개요</h1>
+<hr />
+
+<p>MySQL에서 조금 복잡한 쿼리를 작성하게되면, <br />
+한개의 쿼리문이나 테이블 호출 한번으로 해결할 수 없을때가 있는데, <br />
+이럴때 사용가능한 것 중 하나가 Subquery(서브쿼리)이다.</p>
+
+<p><br /></p>
+
+<h1 id="2-subquery의-특징">2. Subquery의 특징</h1>
+<p>서브쿼리는 기존 테이블을 조작하여, <br />
+추가적인 Temp용 Subtable을 만든다고 보면된다. <br />
+MySQL에서는 Subquery의 엘리어스(Alias, 별칭)을 반드시 지정하도록 되어있다.</p>
+
+<hr />
+
+<h2 id="21-subquery-만들기">2.1 Subquery 만들기</h2>
+<p>Subquery는 <code class="language-plaintext highlighter-rouge">()</code>로 묶어 설정한다. <br />
+FROM, WHERE 등 기존에 테이블이 들어갈 수 있는곳엔 거의 모두 삽입할 수 있다.</p>
+
+<blockquote>
+  <p><strong>(</strong>　   <strong>SELECT</strong> <em>Subquery 컬럼명</em>  <br />
+　　<strong>FROM</strong> <em>Subquery를 만들 테이블</em><br />
+　　[<strong>WHERE</strong> <em>Subquery조건</em>]…  <strong>)</strong> <em>Subquery앨리어스</em></p>
+</blockquote>
+
+<figure class="highlight">
+  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="err">ㄴ</span>
+<span class="k">FROM</span> </code></pre>
+</figure>
+
+
+      <div class="toc">
+        <a href="#">&lt;맨 위로&gt;</a>
+      </div>
+      <div class="c-article__footer u-clearfix">
+        <div class="c-article__tag">
+          
+          <a href="/tags#SQL Query">&#35; SQL Query</a>
+          
+          <a href="/tags#MySQL">&#35; MySQL</a>
+          
+        </div>
+        <div class="c-article__share">
+          <a href="https://twitter.com/intent/tweet?text=Mysql_3_subquery&url=http://localhost:4000/MySQL_3_Subquery/" title="Share
+          on Twitter" rel="nofollow" target="_blank"><div data-icon='ei-sc-twitter' data-size='s'></div></a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/MySQL_3_Subquery/" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
+        </div>
+      </div>
+      
+      <div class="c-recent-post">
+        <h4 class="c-recent__title">You might also enjoy</h4>
+        <div class="c-recent__box">
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/MySQL_2_Group_&_Order/" style="background-image: url( /images/2023-08-17-MySQL_2_Group_&_Order/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/MySQL_2_Group_&_Order/">MySQL 정렬&그룹화하기 (GROUP & ORDER)</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-08-17T00:00:00+09:00">August 17, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/Jekyll_Blog_Renewal_Plan/" style="background-image: url( /images/2023-08-17-Jekyll_Blog_Renewal_Plan/banner.jpg)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/Jekyll_Blog_Renewal_Plan/">Jekyll Blog Renewal Plan</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-08-17T00:00:00+09:00">August 17, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/Blog_Status/" style="background-image: url( /images/2023-07-05-Blog_Status/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/Blog_Status/">Blog 진행상황</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-07-05T00:00:00+09:00">July 5, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+          <div class="c-recent__item">
+            <a class="c-recent__image" href="/JAVA_Advanced/" style="background-image: url( /images/2023-06-27-JAVA_Advanced/banner.png)"></a>
+            <div class="c-recent__footer">
+              <h4><a href="/JAVA_Advanced/">JAVA Advanced</a></h4>
+              <div class="c-recent__date">
+                <time datetime="2023-06-27T00:00:00+09:00">June 27, 2023</time>
+              </div>
+            </div>
+          </div>
+        
+        
+        </div>
+      </div> <!-- /.c-recent-post -->
+      
+        <div class="c-comments">
+  <div id="disqus_thread" class="article-comments"></div>
+  <script>
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = '//remerer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+</div> <!-- /.c-comments -->
+      
+    </div> <!-- /.c-wrap-content -->
+  </div> <!-- /.c-article__content -->
+</article> <!-- /.c-article-page -->
 
 </main> <!-- /.c-content -->
   </div> <!-- /.o-wrapper -->
