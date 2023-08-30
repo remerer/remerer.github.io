@@ -1,9 +1,17 @@
 [
   
     {
-      "title"    : "MySQL String &amp; Date 조작",
+      "title"    : "Kotlin 기초",
       "category" : "",
-      "tags"     : "",
+      "tags"     : "Kotlin, Android, and JS",
+      "url"      : "/Kotlin_0/",
+      "date"     : "2023-08-30 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "MySQL String &amp; Date 조작어",
+      "category" : "",
+      "tags"     : "SQL Query and MySQL",
       "url"      : "/MySQL_3/",
       "date"     : "2023-08-28 00:00:00 +0900"
     } ,
