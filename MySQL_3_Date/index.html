@@ -5,9 +5,9 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-  <title>MySQL 서브쿼리</title>
+  <title>MySQL_3_Date</title>
   <meta name='description' content="">
-  <link rel='canonical' href="http://localhost:4000/MySQL_4/">
+  <link rel='canonical' href="http://localhost:4000/MySQL_3_Date/">
   <link rel='alternate' type='application/rss+xml' title='Remer's Devlog' href="http://localhost:4000/feed.xml">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Volkhov:400,700" rel="stylesheet">
@@ -108,18 +108,18 @@
       </div>
     </header>
     
-    <div class="c-article__image o-opacity" style="background-image: url( /images/2023-08-23-MySQL_4/banner.png )"></div>
+    <div class="c-article__image o-opacity" style="background-image: url( /images/2023-08-21-MySQL_3_Date/banner.png )"></div>
     
     <div class="c-wrap-content" style="max-width: 1000px; margin: 0 auto;">
       <header class="c-article__header">
-        <h1 class="c-article__title">MySQL 서브쿼리</h1>
+        <h1 class="c-article__title">MySQL_3_Date</h1>
         <div class="c-article__date">
-          <span>Date Created : 2023, Aug 23<br>
+          <span>Date Created : 2023, Aug 21<br>
                 Date Modified : 2023, Aug 30</span>  
         </div>
       </header>
       <!-- 목차 -->
-      <ul class="c-inline-toc"><h5>목차</h5><li><a href="#1-개요">1. 개요</a></li><li><a href="#2-subquery의-특징">2. Subquery의 특징</a><ul><li><a href="#21-subquery-만들기">2.1 Subquery 만들기</a></li></ul></li></ul>
+      <ul class="c-inline-toc"><h5>목차</h5><li><a href="#1-개요">1. 개요</a></li><li><a href="#2-query">2. QUERY</a><ul><li><a href="#21-date_format">2.1 DATE_FORMAT</a></li><li><a href="#22-datediff">2.2 DATEDIFF</a></li><li><a href="#23-year-monty-day">2.3 YEAR, MONTY, DAY</a></li></ul></li><li><a href="#3-연관문서">3. 연관문서</a></li></ul>
 
       <!-- 내용 -->
       <p><br /></p>
@@ -127,34 +127,33 @@
 <h1 id="1-개요">1. 개요</h1>
 <hr />
 
-<p>MySQL에서 조금 복잡한 쿼리를 작성하게되면, <br />
-한개의 쿼리문이나 테이블 호출 한번으로 해결할 수 없을때가 있는데, <br />
-이럴때 사용가능한 것 중 하나가 Subquery(서브쿼리)이다.</p>
+<p>MySQL의 쿼리문 중에서, 날짜관련 조작을 처리하기위한 질의어들을 설명한다.</p>
+<blockquote>
+  <p><strong>[!]</strong> 단순비교식, 문자열과의 비교의 경우, <br />
+일련의 숫자비교와 같이 처리됨에 유의 <br />
+2023-08-21(Date) == 20230821(Deciaml)</p>
+</blockquote>
 
 <p><br /></p>
 
-<h1 id="2-subquery의-특징">2. Subquery의 특징</h1>
-<p>서브쿼리는 기존 테이블을 조작하여, <br />
-추가적인 Temp용 Subtable을 만든다고 보면된다. <br />
-MySQL에서는 FROM절의 Subquery의 엘리어스(Alias, 별칭)을 반드시 지정하도록 되어있다.</p>
-
+<h1 id="2-query">2. QUERY</h1>
 <hr />
 
-<h2 id="21-subquery-만들기">2.1 Subquery 만들기</h2>
-<p>Subquery는 <code class="language-plaintext highlighter-rouge">()</code>로 묶어 설정한다. <br />
-FROM, WHERE 등 기존에 테이블이 들어갈 수 있는곳엔 거의 모두 삽입할 수 있다.</p>
+<h2 id="21-date_format">2.1 DATE_FORMAT</h2>
+<p>내용본문</p>
 
-<blockquote>
-  <p><strong>(</strong>　   <strong>SELECT</strong> <em>Subquery 컬럼명</em>  <br />
-　　<strong>FROM</strong> <em>Subquery를 만들 테이블</em><br />
-　　[<strong>WHERE</strong> <em>Subquery조건</em>]…  <strong>)</strong> <em>Subquery앨리어스</em></p>
-</blockquote>
+<h2 id="22-datediff">2.2 DATEDIFF</h2>
 
-<figure class="highlight">
-  <pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> 
-<span class="k">FROM</span> </code></pre>
-</figure>
+<h2 id="23-year-monty-day">2.3 YEAR, MONTY, DAY</h2>
 
+<h1 id="3-연관문서">3. 연관문서</h1>
+<hr />
+
+<p><strong>연관문서</strong></p>
+
+<p><strong><a href="../SQL_0_Intro">0. SQL 개요</a></strong> <br />
+<strong><a href="../MySQL_1_DML">1. MySQL 조작어</a></strong> <br />
+<!-- **[2. MySQL 정렬&그룹화](../MySQL_2_Group_&_Order)**    --></p>
 
       <div class="toc">
         <a href="#">&lt;맨 위로&gt;</a>
@@ -162,15 +161,11 @@ FROM, WHERE 등 기존에 테이블이 들어갈 수 있는곳엔 거의 모두 
       <div class="c-article__footer u-clearfix">
         <div class="c-article__tag">
           
-          <a href="/tags#SQL Query">&#35; SQL Query</a>
-          
-          <a href="/tags#MySQL">&#35; MySQL</a>
-          
         </div>
         <div class="c-article__share">
-          <a href="https://twitter.com/intent/tweet?text=MySQL%20%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC&url=http://localhost:4000/MySQL_4/" title="Share
+          <a href="https://twitter.com/intent/tweet?text=MySQL_3_Date&url=http://localhost:4000/MySQL_3_Date/" title="Share
           on Twitter" rel="nofollow" target="_blank"><div data-icon='ei-sc-twitter' data-size='s'></div></a>
-          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/MySQL_4/" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/MySQL_3_Date/" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
         </div>
       </div>
       
@@ -204,11 +199,11 @@ FROM, WHERE 등 기존에 테이블이 들어갈 수 있는곳엔 거의 모두 
         
         
           <div class="c-recent__item">
-            <a class="c-recent__image" href="/MySQL_3_Date/" style="background-image: url( /images/2023-08-21-MySQL_3_Date/banner.png)"></a>
+            <a class="c-recent__image" href="/MySQL_4/" style="background-image: url( /images/2023-08-23-MySQL_4/banner.png)"></a>
             <div class="c-recent__footer">
-              <h4><a href="/MySQL_3_Date/">MySQL_3_Date</a></h4>
+              <h4><a href="/MySQL_4/">MySQL 서브쿼리</a></h4>
               <div class="c-recent__date">
-                <time datetime="2023-08-21T00:00:00+09:00">August 21, 2023</time>
+                <time datetime="2023-08-23T00:00:00+09:00">August 23, 2023</time>
               </div>
             </div>
           </div>

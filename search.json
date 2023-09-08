@@ -25,6 +25,14 @@
     } ,
   
     {
+      "title"    : "MySQL_3_Date",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/MySQL_3_Date/",
+      "date"     : "2023-08-21 00:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "MySQL 정렬&amp;그룹화하기 (GROUP &amp; ORDER)",
       "category" : "",
       "tags"     : "SQL Query and MySQL",
